@@ -1,0 +1,59 @@
+CREATE DATABASE TP_FabricaRuedas;
+GO
+USE TP_FabricaRuedas;
+GO
+
+ CREATE TABLE Jefes(
+	IdJefe INT PRIMARY KEY IDENTITY(1,1),
+	Nombre VARCHAR(50) NOT NULL,
+	Apellido VARCHAR(50) NOT NULL,
+	Area VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Empleados(
+	IdEmpleado INT PRIMARY KEY IDENTITY(1,1),
+	IdJefe INT FOREIGN KEY REFERENCES Jefes(IdJefe),
+	Nombre VARCHAR(50) NOT NULL,
+	Apellido VARCHAR(50) NOT NULL,
+	Legajo INT UNIQUE NOT NULL,
+	FechaIngreso DATE NOT NULL,
+);
+
+CREATE TABLE Proveedores(
+	IdProveedor INT PRIMARY KEY IDENTITY(1,1),
+	NombreEmpresa VARCHAR(100) NOT NULL,
+	Cuit VARCHAR(20) NOT NULL,
+	Email VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Suministros(
+	IdSuministro INT PRIMARY KEY IDENTITY(1,1),
+	IdProveedor INT FOREIGN KEY REFERENCES Proveedores(IdProveedor),
+	Descripcion VARCHAR(100) NOT NULL,
+	CantdRecibida INT NOT NULL,
+	FechaEntrega DATE DEFAULT GETDATE()  -- Se crea con la fecha del dia
+);
+
+CREATE TABLE StockRuedas(
+	IdRueda INT PRIMARY KEY IDENTITY(1,1),
+	Modelo VARCHAR(50) NOT NULL,
+	Medida VARCHAR(20) NOT NULL,
+	CantDisponible INT DEFAULT (0),
+	PrecioUnitario DECIMAL(18,2) NOT NULL
+);
+
+CREATE TABLE Clientes(
+	IdCliente INT PRIMARY KEY IDENTITY(1,1),
+	NombreCliente VARCHAR(50) NOT NULL,
+	Cuit VARCHAR(20) UNIQUE,
+	Telefono VARCHAR(20)
+);
+
+CREATE TABLE Ventas(
+	IdVenta INT PRIMARY KEY IDENTITY(1,1),
+	IdCliente INT FOREIGN KEY REFERENCES Clientes(IdCliente),
+	IdRueda INT FOREIGN KEY REFERENCES StockRuedas(IdRueda),
+	FechaVenta DATETIME DEFAULT GETDATE(), -- Se crea con la fecha del dia
+	Cantidad INT NOT NULL,
+	MontoTotal DECIMAL(18,2) NOT NULL
+);
