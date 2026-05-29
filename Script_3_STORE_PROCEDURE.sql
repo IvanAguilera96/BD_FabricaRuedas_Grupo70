@@ -6,8 +6,7 @@ GO
 CREATE PROCEDURE SP_RegistrarVenta
 	@IdCliente INT,
 	@IdRueda INT,
-	@Cantidad INT,
-	@MontoTotal DECIMAL(18,2)
+	@Cantidad INT
 AS
 BEGIN
 	--Valida cantidad mayor a 0
@@ -33,13 +32,19 @@ BEGIN
 
 	--Valida stock disponible
 	DECLARE @StockActual INT;
+	DECLARE @PrecioUnitario DECIMAL(18,2);
+	DECLARE @MontoTotal DECIMAL(18,2);
+
 	SET @StockActual = (SELECT CantDisponible FROM StockRuedas WHERE IdRueda = @IdRueda);
+	SET @PrecioUnitario = (SELECT PrecioUnitario FROM StockRuedas WHERE IdRueda = @IdRueda);
 
 	IF @StockActual < @Cantidad
 	BEGIN
 		PRINT 'Stock insuficiente.';
 		RETURN;
 	END
+
+	SET @MontoTotal = @PrecioUnitario * @Cantidad
 
 	--Transacción para insertar la venta y setear el stock en conjunto
 	BEGIN TRY
@@ -99,10 +104,5 @@ BEGIN
 	END CATCH
 END;
 GO
-
-
-
-		
-		
 
 
