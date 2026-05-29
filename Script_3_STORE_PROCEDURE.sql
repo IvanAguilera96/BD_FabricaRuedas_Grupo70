@@ -1,7 +1,8 @@
 USE TP_FabricaRuedas
 GO
 
---Procedimiento para registrar una venta (Ventas) y descontar el stock (StockRuedas).
+--Procedimiento para registrar una venta y actualizar el stock del producto vendido.
+--Recibe IdCliente, IdRueda y Cantidad. 
 
 CREATE PROCEDURE SP_RegistrarVenta
 	@IdCliente INT,
@@ -69,14 +70,14 @@ BEGIN
 END;
 GO
 
---Procedimiento para registrar un nuevo empleado (Empleados)
+--Procedimiento para registrar un nuevo empleado. 
+--Recibe IdJefe, Nombre, Apellido, Legajo.
 
 CREATE PROCEDURE SP_NuevoEmpleado
 	@IdJefe INT,
 	@Nombre VARCHAR(50),
 	@Apellido VARCHAR(50),
-	@Legajo INT,
-	@FechaIngreso DATE
+	@Legajo INT
 AS
 BEGIN
 	--Valida jefe existente en la tabla Jefes
@@ -95,7 +96,7 @@ BEGIN
 
 	BEGIN TRY
 		INSERT INTO Empleados (IdJefe, Nombre, Apellido, Legajo, FechaIngreso)
-		VALUES (@IdJefe, @Nombre, @Apellido, @Legajo, @FechaIngreso);
+		VALUES (@IdJefe, @Nombre, @Apellido, @Legajo, GETDATE());
 
 		PRINT 'Empleado registado con exito.';
 	END TRY
@@ -104,5 +105,3 @@ BEGIN
 	END CATCH
 END;
 GO
-
-
