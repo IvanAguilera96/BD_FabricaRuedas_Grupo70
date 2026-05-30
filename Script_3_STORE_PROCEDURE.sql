@@ -107,7 +107,7 @@ END;
 GO
 
 --Procedimiento para registrar una entrada de suministros. 
---Recibe IdJefe, Nombre, Apellido, Legajo.
+--Recibe IdProveedor, Descripcion, CantdRecibida.
 
 CREATE PROCEDURE SP_IngresoSuministro
 	@IdProveedor INT,
