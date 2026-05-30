@@ -105,3 +105,38 @@ BEGIN
 	END CATCH
 END;
 GO
+
+--Procedimiento para registrar una entrada de suministros. 
+--Recibe IdJefe, Nombre, Apellido, Legajo.
+
+CREATE PROCEDURE SP_IngresoSuministro
+	@IdProveedor INT,
+	@Descripcion VARCHAR(100),
+	@CantdRecibida INT
+AS
+BEGIN
+	--Valida proveedor existente
+	IF NOT EXISTS (SELECT 1 FROM Proveedores Where IdProveedor = @IdProveedor)
+	BEGIN
+		PRINT 'El proveedor no está registrado en la fabrica.';
+		RETURN;
+	END
+
+	--Valida cantidad positiva
+	IF @CantdRecibida <= 0
+	BEGIN
+		PRINT 'La cantidad ingresada debe ser mayor a 0.';
+		RETURN;
+	END
+
+	BEGIN TRY
+		INSERT INTO Suministros (IdProveedor, Descripcion, CantdRecibida, FechaEntrega)
+		VALUES (@IdProveedor, @Descripcion, @CantdRecibida, GETDATE());
+
+		PRINT 'Ingreso de suministro registrado con exito.';
+	END TRY
+	BEGIN CATCH
+		PRINT 'Error ingresando el suministro: ' + ERROR_MESSAGE();
+	END CATCH
+END;
+GO
