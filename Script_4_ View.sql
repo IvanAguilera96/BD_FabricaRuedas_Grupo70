@@ -4,9 +4,9 @@ GO
 --GO
 
 --DROP VIEW IF EXISTS VW_AsignacionesPersonal;
---GO
+--    GO
 
---DROP VIEW IF EXISTS VW_ResumenVentas;
+--  DROP VIEW IF EXISTS VW_ResumenVentas;
 --GO        
 
 CREATE VIEW VW_StockCritico AS
