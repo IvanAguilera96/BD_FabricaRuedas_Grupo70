@@ -2,12 +2,17 @@ CREATE DATABASE TP_FabricaRuedas;
 GO
 USE TP_FabricaRuedas;
 GO
+ 
+ CREATE TABLE Areas(
+	IdArea INT PRIMARY KEY IDENTITY(1,1),
+	NombreArea VARCHAR(50) NOT NULL UNIQUE,
+);
 
  CREATE TABLE Jefes(
 	IdJefe INT PRIMARY KEY IDENTITY(1,1),
+	IdArea INT FOREIGN KEY REFERENCES Areas(IdArea),
 	Nombre VARCHAR(50) NOT NULL,
-	Apellido VARCHAR(50) NOT NULL,
-	Area VARCHAR(50) NOT NULL
+	Apellido VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Empleados(
@@ -52,8 +57,14 @@ CREATE TABLE Clientes(
 CREATE TABLE Ventas(
 	IdVenta INT PRIMARY KEY IDENTITY(1,1),
 	IdCliente INT FOREIGN KEY REFERENCES Clientes(IdCliente),
-	IdRueda INT FOREIGN KEY REFERENCES StockRuedas(IdRueda),
 	FechaVenta DATETIME DEFAULT GETDATE(), -- Se crea con la fecha del dia
-	Cantidad INT NOT NULL,
 	MontoTotal DECIMAL(18,2) NOT NULL
+);
+
+CREATE TABLE DetalleVentas(
+    IdDetalle INT PRIMARY KEY IDENTITY(1,1),
+	IdVenta INT FOREIGN KEY REFERENCES Ventas(IdVenta),
+	IdRueda INT FOREIGN KEY REFERENCES StockRuedas(IdRueda),
+	Cantidad INT NOT NULL,
+	PrecioUnitario DECIMAL(18,2) NOT NULL
 );
