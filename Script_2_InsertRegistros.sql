@@ -57,5 +57,5 @@ INSERT INTO Ventas (IDCliente, FechaVenta, MontoTotal) VALUES
 -- 9. CARGA DE DETALLES DE VENTA
 INSERT INTO DetalleVentas (IdVenta, IdRueda, Cantidad, PrecioUnitario) VALUES
 (1, 1, 4, 85000.00),
-(2, 2, 4, 290000.00),
-(3, 3, 10, 380000.00);
+(2, 2, 8, 145000.00),
+(3, 3, 20, 190000.00);
