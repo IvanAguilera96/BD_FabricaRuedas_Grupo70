@@ -2,28 +2,24 @@ CREATE DATABASE TP_FabricaRuedas;
 GO
 USE TP_FabricaRuedas;
 GO
- 
+
  CREATE TABLE Areas(
 	IdArea INT PRIMARY KEY IDENTITY(1,1),
 	NombreArea VARCHAR(50) NOT NULL UNIQUE,
 );
 
- CREATE TABLE Jefes(
-	IdJefe INT PRIMARY KEY IDENTITY(1,1),
-	IdArea INT FOREIGN KEY REFERENCES Areas(IdArea),
-	Nombre VARCHAR(50) NOT NULL,
-	Apellido VARCHAR(50) NOT NULL
-);
-
 CREATE TABLE Empleados(
-	IdEmpleado INT PRIMARY KEY IDENTITY(1,1),
-	IdJefe INT FOREIGN KEY REFERENCES Jefes(IdJefe),
-	Nombre VARCHAR(50) NOT NULL,
-	Apellido VARCHAR(50) NOT NULL,
-	Legajo INT UNIQUE NOT NULL,
-	FechaIngreso DATE NOT NULL,
-);
-
+    IdEmpleado INT PRIMARY KEY IDENTITY(1,1),
+    Nombre VARCHAR(100) NOT NULL,
+    Apellido VARCHAR(100) NOT NULL,
+    Legajo INT UNIQUE NOT NULL,
+    FechaIngreso DATE NOT NULL,
+	Telefono VARCHAR(20) NOT NULL,
+    Cargo VARCHAR(50) NOT NULL,
+    IdArea INT FOREIGN KEY REFERENCES Areas(IdArea),   
+    IdSupervisor INT NULL FOREIGN KEY REFERENCES Empleados(IdEmpleado)
+); 
+ 
 CREATE TABLE Proveedores(
 	IdProveedor INT PRIMARY KEY IDENTITY(1,1),
 	NombreEmpresa VARCHAR(100) NOT NULL,
@@ -36,7 +32,7 @@ CREATE TABLE Suministros(
 	IdProveedor INT FOREIGN KEY REFERENCES Proveedores(IdProveedor),
 	Descripcion VARCHAR(100) NOT NULL,
 	CantdRecibida INT NOT NULL,
-	FechaEntrega DATE DEFAULT GETDATE()  -- Se crea con la fecha del dia
+	FechaEntrega DATE DEFAULT GETDATE()
 );
 
 CREATE TABLE StockRuedas(
@@ -51,13 +47,16 @@ CREATE TABLE Clientes(
 	IdCliente INT PRIMARY KEY IDENTITY(1,1),
 	NombreCliente VARCHAR(50) NOT NULL,
 	Cuit VARCHAR(20) UNIQUE,
-	Telefono VARCHAR(20)
+	Telefono VARCHAR(20) NOT NULL,
+	Mail VARCHAR(50) NOT NULL,
+	Domicilio VARCHAR(50) NOT NULL,
+	CondicionFiscal VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE Ventas(
 	IdVenta INT PRIMARY KEY IDENTITY(1,1),
 	IdCliente INT FOREIGN KEY REFERENCES Clientes(IdCliente),
-	FechaVenta DATETIME DEFAULT GETDATE(), -- Se crea con la fecha del dia
+	FechaVenta DATETIME DEFAULT GETDATE(),
 	MontoTotal DECIMAL(18,2) NOT NULL
 );
 
