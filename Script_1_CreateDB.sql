@@ -3,7 +3,7 @@ GO
 USE TP_FabricaRuedas;
 GO
 
- CREATE TABLE Areas(
+CREATE TABLE Areas(
 	IdArea INT PRIMARY KEY IDENTITY(1,1),
 	NombreArea VARCHAR(50) NOT NULL UNIQUE,
 );
@@ -19,7 +19,7 @@ CREATE TABLE Empleados(
     IdArea INT FOREIGN KEY REFERENCES Areas(IdArea),   
     IdSupervisor INT NULL FOREIGN KEY REFERENCES Empleados(IdEmpleado)
 ); 
- 
+
 CREATE TABLE Proveedores(
 	IdProveedor INT PRIMARY KEY IDENTITY(1,1),
 	NombreEmpresa VARCHAR(100) NOT NULL,
