@@ -1,3 +1,6 @@
+USE TP_FabricaRuedas;
+GO
+
 --1. CARGA DE AREAS
 INSERT INTO Areas (NombreArea) VALUES 
 ('Producción'),

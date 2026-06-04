@@ -7,7 +7,8 @@ GO
 CREATE PROCEDURE SP_RegistrarVenta
 	@IdCliente INT,
 	@IdRueda INT,
-	@Cantidad INT
+	@Cantidad INT,
+	@IdVenta INT OUTPUT
 AS
 BEGIN
 	--Valida cantidad mayor a 0
@@ -51,8 +52,23 @@ BEGIN
 	BEGIN TRY
 		BEGIN TRANSACTION;
 
-		INSERT INTO Ventas (IdCliente, IdRueda, FechaVenta, Cantidad, MontoTotal)
-		VALUES (@IdCliente, @IdRueda, GETDATE(), @Cantidad, @MontoTotal);
+		-- Si @IdVenta viene en 0 o NULL, es el primer producto, se crea la venta.
+        IF ISNULL(@IdVenta, 0) = 0
+        BEGIN
+            INSERT INTO Ventas (IdCliente, FechaVenta, MontoTotal)
+            VALUES (@IdCliente, GETDATE(), @MontoTotal);
+            
+            SET @IdVenta = SCOPE_IDENTITY(); -- Guarda el ID de la nueva venta
+        END
+        ELSE
+        BEGIN
+            -- Si la venta ya existe, actualiza el monto total.
+            UPDATE Ventas SET MontoTotal = MontoTotal + @MontoTotal WHERE IdVenta = @IdVenta;
+        END
+
+        -- Inserta el detalle de la venta
+        INSERT INTO DetalleVentas (IdVenta, IdRueda, Cantidad, PrecioUnitario)
+        VALUES (@IdVenta, @IdRueda, @Cantidad, @PrecioUnitario);
 
 		UPDATE StockRuedas
 		SET CantDisponible = CantDisponible - @Cantidad
@@ -74,20 +90,33 @@ GO
 --Recibe IdJefe, Nombre, Apellido, Legajo.
 
 CREATE PROCEDURE SP_NuevoEmpleado
-	@IdJefe INT,
-	@Nombre VARCHAR(50),
-	@Apellido VARCHAR(50),
-	@Legajo INT
+	@Nombre VARCHAR(100),
+	@Apellido VARCHAR(100),
+	@Legajo INT,
+	@Telefono VARCHAR(20),
+	@Cargo VARCHAR(50),
+	@IdArea INT,
+	@IdSupervisor INT = NULL --Por defecto null (caso que no tenga jefe)
 AS
 BEGIN
-	--Valida jefe existente en la tabla Jefes
-	IF NOT EXISTS (SELECT 1 FROM Jefes WHERE IdJefe = @IdJefe)
+	--Valida área existente
+	IF NOT EXISTS (SELECT 1 FROM Areas WHERE IdArea = @IdArea)
 	BEGIN
-		PRINT 'No existe el jefe especificado. Elija uno existente.';
+		PRINT 'El área especificada no existe.';
 		RETURN;
 	END
 
-	--Valida legajo existente en la tabla Empleados
+	--Valida supervisor existente
+	IF @IdSupervisor IS NOT NULL
+	BEGIN
+		IF NOT EXISTS (SELECT 1 FROM Empleados WHERE IdEmpleado = @IdSupervisor)
+		BEGIN
+			PRINT 'El supervisor especificado no existe.';
+			RETURN;
+		END
+	END
+
+	--Valida legajo duplicado
 	IF EXISTS (SELECT 1 FROM Empleados WHERE Legajo = @Legajo)
 	BEGIN
 		PRINT 'El numero de legajo ya se encuentra asignado a otro empleado.';
@@ -95,8 +124,8 @@ BEGIN
 	END
 
 	BEGIN TRY
-		INSERT INTO Empleados (IdJefe, Nombre, Apellido, Legajo, FechaIngreso)
-		VALUES (@IdJefe, @Nombre, @Apellido, @Legajo, GETDATE());
+		INSERT INTO Empleados (Nombre, Apellido, Legajo, FechaIngreso, Telefono, Cargo, IdArea, IdSupervisor)
+		VALUES (@Nombre, @Apellido, @Legajo, GETDATE(), @Telefono, @Cargo, @IdArea, @IdSupervisor);
 
 		PRINT 'Empleado registado con exito.';
 	END TRY
@@ -140,3 +169,5 @@ BEGIN
 	END CATCH
 END;
 GO
+
+
