@@ -1,13 +1,13 @@
 USE TP_FabricaRuedas;
 GO
---DROP VIEW IF EXISTS VW_StockCritico;
---GO
+DROP VIEW IF EXISTS VW_StockCritico;
+GO
 
---DROP VIEW IF EXISTS VW_AsignacionesPersonal;
-----    GO
+DROP VIEW IF EXISTS VW_AsignacionesPersonal;
+   GO
 
---  DROP VIEW IF EXISTS VW_ResumenVentas;
---GO        
+ DROP VIEW IF EXISTS VW_ResumenVentas;
+GO        
 
 CREATE VIEW VW_StockCritico AS
 SELECT
