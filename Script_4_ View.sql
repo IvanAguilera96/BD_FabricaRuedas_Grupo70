@@ -4,7 +4,7 @@ GO
 --GO
 
 --DROP VIEW IF EXISTS VW_AsignacionesPersonal;
---    GO
+----    GO
 
 --  DROP VIEW IF EXISTS VW_ResumenVentas;
 --GO        
