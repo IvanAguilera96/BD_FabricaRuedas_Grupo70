@@ -1,6 +1,6 @@
-﻿namespace FabricaRuedasApp
+﻿namespace Presentacion
 {
-    partial class Default
+    partial class Form1
     {
         /// <summary>
         /// Variable del diseñador necesaria.

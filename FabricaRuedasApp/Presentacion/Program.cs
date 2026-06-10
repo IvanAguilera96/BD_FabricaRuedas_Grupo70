@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FabricaRuedasApp
+namespace Presentacion
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace FabricaRuedasApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Default());
+            Application.Run(new Form1());
         }
     }
 }

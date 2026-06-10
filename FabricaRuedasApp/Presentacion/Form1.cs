@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FabricaRuedasApp
+namespace Presentacion
 {
-    public partial class Default : Form
+    public partial class Form1 : Form
     {
-        public Default()
+        public Form1()
         {
             InitializeComponent();
         }

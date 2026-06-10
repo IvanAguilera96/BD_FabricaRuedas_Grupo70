@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FabricaRuedasApp.Properties
+namespace Presentacion.Properties
 {
 
 
