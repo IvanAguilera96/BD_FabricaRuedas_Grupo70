@@ -6,7 +6,7 @@ ON StockRuedas
 AFTER UPDATE
 AS
 BEGIN
-    --Si el stock baja de 10 unidades cruzando la línea límite
+    --Si el stock baja de 10 unidades
     IF EXISTS (
         SELECT 1 
         FROM Inserted i 
@@ -21,10 +21,9 @@ BEGIN
         FROM Inserted i
         WHERE i.CantDisponible < 10;
 
-        --Protección contra cadenas vacías o errores de SUBSTRING
         IF LEN(@ModelosAfectados) > 0
         BEGIN
-            PRINT 'El stock de los siguientes modelos ha caido por debajo del limite de 10 unidades:';
+            PRINT 'El stock de los siguientes modelos ha caido por debajo de 10 unidades:';
             PRINT SUBSTRING(@ModelosAfectados, 1, LEN(@ModelosAfectados) - 1);
         END
     END 
