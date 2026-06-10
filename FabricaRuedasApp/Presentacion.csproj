@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\Empleado.cs" />
+    <Compile Include="Dominio\Rueda.cs" />
+    <Compile Include="Dominio\Suministro.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,7 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AccesoDatos\" />
-    <Folder Include="Dominio\" />
     <Folder Include="Negocio\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
