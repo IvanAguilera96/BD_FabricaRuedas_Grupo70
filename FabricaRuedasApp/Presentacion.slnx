@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="Presentacion.csproj" Id="f8a5310a-fb9a-477f-ad0a-c98a4b59ea05" />
+  <Project Path="../ConexionBD/ConexionBD.csproj" Id="1675ce4a-d19d-4a34-9b80-167663e54dcf" />
+  <Project Path="../Dominio/Dominio.csproj" Id="c02b4e0b-67cd-406e-891d-5459eb033b70" />
+  <Project Path="../Negocio/Negocio.csproj" Id="971512a6-4c2a-45c7-aad1-b5e907e949e1" />
+  <Project Path="PresentacionWinForm.csproj" Id="f8a5310a-fb9a-477f-ad0a-c98a4b59ea05" />
 </Solution>
