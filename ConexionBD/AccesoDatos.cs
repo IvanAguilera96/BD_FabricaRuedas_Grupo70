@@ -44,6 +44,12 @@ namespace ConexionBD
             }
         }
 
+        public void setearProcedimiento(string sp)
+        {
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText= sp;
+        }
+
         public void ejecutarAccion()
         {
             comando.Connection = conexion;
