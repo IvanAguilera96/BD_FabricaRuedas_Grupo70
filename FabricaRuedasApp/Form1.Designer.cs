@@ -30,6 +30,7 @@
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnEmpleado = new System.Windows.Forms.Button();
+            this.btnStockCritico = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEmpleado
@@ -42,11 +43,22 @@
             this.btnEmpleado.UseVisualStyleBackColor = true;
             this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
             // 
+            // btnStockCritico
+            // 
+            this.btnStockCritico.Location = new System.Drawing.Point(359, 175);
+            this.btnStockCritico.Name = "btnStockCritico";
+            this.btnStockCritico.Size = new System.Drawing.Size(189, 23);
+            this.btnStockCritico.TabIndex = 2;
+            this.btnStockCritico.Text = "StockRueda";
+            this.btnStockCritico.UseVisualStyleBackColor = true;
+            this.btnStockCritico.Click += new System.EventHandler(this.btnStockCritico_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnStockCritico);
             this.Controls.Add(this.btnEmpleado);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -58,6 +70,7 @@
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnEmpleado;
+        private System.Windows.Forms.Button btnStockCritico;
     }
 }
 

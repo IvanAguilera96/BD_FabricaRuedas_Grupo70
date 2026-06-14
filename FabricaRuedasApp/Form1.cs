@@ -25,6 +25,12 @@ namespace Presentacion
             EmpleadosForm empleadoForm = new EmpleadosForm();
             empleadoForm.ShowDialog();
         }
+
+        private void btnStockCritico_Click(object sender, EventArgs e)
+        {
+            StockRuedaForm stockForm = new StockRuedaForm();
+            stockForm.ShowDialog();
+        }
     }
 }
 
