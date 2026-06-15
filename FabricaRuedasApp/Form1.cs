@@ -31,6 +31,12 @@ namespace Presentacion
             StockRuedaForm stockForm = new StockRuedaForm();
             stockForm.ShowDialog();
         }
+
+        private void btnResumenVenta_Click(object sender, EventArgs e)
+        {
+            ResumenVentaForm resumenVenta = new ResumenVentaForm();
+            resumenVenta.ShowDialog();
+        }
     }
 }
 

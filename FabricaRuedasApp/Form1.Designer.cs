@@ -31,6 +31,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnEmpleado = new System.Windows.Forms.Button();
             this.btnStockCritico = new System.Windows.Forms.Button();
+            this.btnResumenVenta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEmpleado
@@ -53,11 +54,22 @@
             this.btnStockCritico.UseVisualStyleBackColor = true;
             this.btnStockCritico.Click += new System.EventHandler(this.btnStockCritico_Click);
             // 
+            // btnResumenVenta
+            // 
+            this.btnResumenVenta.Location = new System.Drawing.Point(238, 258);
+            this.btnResumenVenta.Name = "btnResumenVenta";
+            this.btnResumenVenta.Size = new System.Drawing.Size(189, 23);
+            this.btnResumenVenta.TabIndex = 3;
+            this.btnResumenVenta.Text = "ResumenVenta";
+            this.btnResumenVenta.UseVisualStyleBackColor = true;
+            this.btnResumenVenta.Click += new System.EventHandler(this.btnResumenVenta_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnResumenVenta);
             this.Controls.Add(this.btnStockCritico);
             this.Controls.Add(this.btnEmpleado);
             this.Name = "Form1";
@@ -71,6 +83,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnEmpleado;
         private System.Windows.Forms.Button btnStockCritico;
+        private System.Windows.Forms.Button btnResumenVenta;
     }
 }
 
