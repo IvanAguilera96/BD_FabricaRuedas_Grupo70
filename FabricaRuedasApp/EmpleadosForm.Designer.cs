@@ -32,15 +32,19 @@
             this.btnVolverEmpleados = new System.Windows.Forms.Button();
             this.lblEmpleados = new System.Windows.Forms.Label();
             this.btnAgregarEmpleado = new System.Windows.Forms.Button();
+            this.panelGrillaEmpleados = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            this.panelGrillaEmpleados.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvEmpleados
             // 
+            this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(106, 192);
+            this.dgvEmpleados.Location = new System.Drawing.Point(12, 10);
             this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.Size = new System.Drawing.Size(640, 150);
+            this.dgvEmpleados.Size = new System.Drawing.Size(582, 175);
             this.dgvEmpleados.TabIndex = 0;
             // 
             // btnVolverEmpleados
@@ -59,7 +63,7 @@
             this.lblEmpleados.AutoSize = true;
             this.lblEmpleados.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpleados.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblEmpleados.Location = new System.Drawing.Point(101, 99);
+            this.lblEmpleados.Location = new System.Drawing.Point(244, 83);
             this.lblEmpleados.Name = "lblEmpleados";
             this.lblEmpleados.Size = new System.Drawing.Size(342, 30);
             this.lblEmpleados.TabIndex = 3;
@@ -68,12 +72,21 @@
             // btnAgregarEmpleado
             // 
             this.btnAgregarEmpleado.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarEmpleado.Location = new System.Drawing.Point(106, 361);
+            this.btnAgregarEmpleado.Location = new System.Drawing.Point(106, 340);
             this.btnAgregarEmpleado.Name = "btnAgregarEmpleado";
             this.btnAgregarEmpleado.Size = new System.Drawing.Size(163, 23);
             this.btnAgregarEmpleado.TabIndex = 4;
             this.btnAgregarEmpleado.Text = "Registrar nuevo empleado";
             this.btnAgregarEmpleado.UseVisualStyleBackColor = true;
+            // 
+            // panelGrillaEmpleados
+            // 
+            this.panelGrillaEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.panelGrillaEmpleados.Controls.Add(this.dgvEmpleados);
+            this.panelGrillaEmpleados.Location = new System.Drawing.Point(106, 140);
+            this.panelGrillaEmpleados.Name = "panelGrillaEmpleados";
+            this.panelGrillaEmpleados.Size = new System.Drawing.Size(602, 194);
+            this.panelGrillaEmpleados.TabIndex = 8;
             // 
             // EmpleadosForm
             // 
@@ -81,10 +94,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelGrillaEmpleados);
             this.Controls.Add(this.btnAgregarEmpleado);
             this.Controls.Add(this.lblEmpleados);
             this.Controls.Add(this.btnVolverEmpleados);
-            this.Controls.Add(this.dgvEmpleados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "EmpleadosForm";
@@ -92,6 +105,7 @@
             this.Text = "EmpleadosForm";
             this.Load += new System.EventHandler(this.EmpleadosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            this.panelGrillaEmpleados.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +117,6 @@
         private System.Windows.Forms.Button btnVolverEmpleados;
         private System.Windows.Forms.Label lblEmpleados;
         private System.Windows.Forms.Button btnAgregarEmpleado;
+        private System.Windows.Forms.Panel panelGrillaEmpleados;
     }
 }

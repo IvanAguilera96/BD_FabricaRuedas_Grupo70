@@ -61,7 +61,7 @@
             this.btnStockCritico.Name = "btnStockCritico";
             this.btnStockCritico.Size = new System.Drawing.Size(200, 160);
             this.btnStockCritico.TabIndex = 2;
-            this.btnStockCritico.Text = "Menú de Productos";
+            this.btnStockCritico.Text = "Inventario";
             this.btnStockCritico.UseVisualStyleBackColor = false;
             this.btnStockCritico.Click += new System.EventHandler(this.btnStockCritico_Click);
             // 
