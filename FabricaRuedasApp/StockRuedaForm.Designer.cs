@@ -38,7 +38,7 @@
             // dgvRuedaStock
             // 
             this.dgvRuedaStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRuedaStock.Location = new System.Drawing.Point(106, 202);
+            this.dgvRuedaStock.Location = new System.Drawing.Point(106, 192);
             this.dgvRuedaStock.Name = "dgvRuedaStock";
             this.dgvRuedaStock.Size = new System.Drawing.Size(634, 150);
             this.dgvRuedaStock.TabIndex = 0;
@@ -68,7 +68,7 @@
             // btnFiltroCritico
             // 
             this.btnFiltroCritico.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltroCritico.Location = new System.Drawing.Point(106, 173);
+            this.btnFiltroCritico.Location = new System.Drawing.Point(106, 167);
             this.btnFiltroCritico.Name = "btnFiltroCritico";
             this.btnFiltroCritico.Size = new System.Drawing.Size(137, 23);
             this.btnFiltroCritico.TabIndex = 5;

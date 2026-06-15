@@ -38,10 +38,12 @@ namespace Presentacion
 
                 if (cargarStockCritico) //true = solo carga productos con stock crítico (VW_StockCritico)
                 {
+                    btnFiltroCritico.Text = "Ver stock general";
                     dgvRuedaStock.DataSource = negocio.ListarStockCritico();
                 }
                 else //false = carga stock completo
                 {
+                    btnFiltroCritico.Text = "Ver stock crítico";
                     dgvRuedaStock.DataSource = negocio.Listar();
                 }
             }

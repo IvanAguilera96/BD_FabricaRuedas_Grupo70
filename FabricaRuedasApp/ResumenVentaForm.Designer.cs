@@ -31,13 +31,14 @@
             this.dgvResumenVenta = new System.Windows.Forms.DataGridView();
             this.btnVolverVentas = new System.Windows.Forms.Button();
             this.lblVentas = new System.Windows.Forms.Label();
+            this.btnAgregarVenta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumenVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvResumenVenta
             // 
             this.dgvResumenVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResumenVenta.Location = new System.Drawing.Point(106, 202);
+            this.dgvResumenVenta.Location = new System.Drawing.Point(106, 192);
             this.dgvResumenVenta.Name = "dgvResumenVenta";
             this.dgvResumenVenta.Size = new System.Drawing.Size(538, 150);
             this.dgvResumenVenta.TabIndex = 0;
@@ -64,12 +65,23 @@
             this.lblVentas.TabIndex = 4;
             this.lblVentas.Text = "Resumen de Ventas histórico";
             // 
+            // btnAgregarVenta
+            // 
+            this.btnAgregarVenta.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarVenta.Location = new System.Drawing.Point(106, 361);
+            this.btnAgregarVenta.Name = "btnAgregarVenta";
+            this.btnAgregarVenta.Size = new System.Drawing.Size(145, 23);
+            this.btnAgregarVenta.TabIndex = 5;
+            this.btnAgregarVenta.Text = "Registrar nueva venta";
+            this.btnAgregarVenta.UseVisualStyleBackColor = true;
+            // 
             // ResumenVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAgregarVenta);
             this.Controls.Add(this.lblVentas);
             this.Controls.Add(this.btnVolverVentas);
             this.Controls.Add(this.dgvResumenVenta);
@@ -90,5 +102,6 @@
         private System.Windows.Forms.DataGridView dgvResumenVenta;
         private System.Windows.Forms.Button btnVolverVentas;
         private System.Windows.Forms.Label lblVentas;
+        private System.Windows.Forms.Button btnAgregarVenta;
     }
 }
