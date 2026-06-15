@@ -49,5 +49,10 @@ namespace Presentacion
                 MessageBox.Show("Error al cargar la grilla de empleados: " + ex.Message);
             }
         }
+
+        private void btnVolverEmpleados_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

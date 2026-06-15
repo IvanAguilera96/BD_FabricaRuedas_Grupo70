@@ -24,5 +24,10 @@ namespace Presentacion
 
             dgvRuedaStock.DataSource = negocio.Listar();
         }
+
+        private void btnVolverStock_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -23,19 +23,24 @@ namespace Presentacion
         private void btnEmpleado_Click(object sender, EventArgs e)
         {
             EmpleadosForm empleadoForm = new EmpleadosForm();
-            empleadoForm.ShowDialog();
+            empleadoForm.ShowDialog(this);
         }
 
         private void btnStockCritico_Click(object sender, EventArgs e)
         {
             StockRuedaForm stockForm = new StockRuedaForm();
-            stockForm.ShowDialog();
+            stockForm.ShowDialog(this);
         }
 
         private void btnResumenVenta_Click(object sender, EventArgs e)
         {
             ResumenVentaForm resumenVenta = new ResumenVentaForm();
-            resumenVenta.ShowDialog();
+            resumenVenta.ShowDialog(this);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

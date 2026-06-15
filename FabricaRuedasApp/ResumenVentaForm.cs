@@ -40,5 +40,10 @@ namespace Presentacion
                 MessageBox.Show("Error al generar el reporte: " + ex.Message);
             }
         }
+
+        private void btnVolverVentas_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
