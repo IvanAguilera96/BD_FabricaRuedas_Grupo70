@@ -30,13 +30,14 @@
         {
             this.dgvResumenVenta = new System.Windows.Forms.DataGridView();
             this.btnVolverVentas = new System.Windows.Forms.Button();
+            this.lblVentas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumenVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvResumenVenta
             // 
             this.dgvResumenVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResumenVenta.Location = new System.Drawing.Point(114, 95);
+            this.dgvResumenVenta.Location = new System.Drawing.Point(106, 202);
             this.dgvResumenVenta.Name = "dgvResumenVenta";
             this.dgvResumenVenta.Size = new System.Drawing.Size(538, 150);
             this.dgvResumenVenta.TabIndex = 0;
@@ -52,12 +53,24 @@
             this.btnVolverVentas.UseVisualStyleBackColor = true;
             this.btnVolverVentas.Click += new System.EventHandler(this.btnVolverVentas_Click);
             // 
+            // lblVentas
+            // 
+            this.lblVentas.AutoSize = true;
+            this.lblVentas.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVentas.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblVentas.Location = new System.Drawing.Point(101, 99);
+            this.lblVentas.Name = "lblVentas";
+            this.lblVentas.Size = new System.Drawing.Size(295, 30);
+            this.lblVentas.TabIndex = 4;
+            this.lblVentas.Text = "Resumen de Ventas histórico";
+            // 
             // ResumenVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblVentas);
             this.Controls.Add(this.btnVolverVentas);
             this.Controls.Add(this.dgvResumenVenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -68,6 +81,7 @@
             this.Load += new System.EventHandler(this.ResumenVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumenVenta)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -75,5 +89,6 @@
 
         private System.Windows.Forms.DataGridView dgvResumenVenta;
         private System.Windows.Forms.Button btnVolverVentas;
+        private System.Windows.Forms.Label lblVentas;
     }
 }
