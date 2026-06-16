@@ -35,13 +35,15 @@
             this.lblRueda = new System.Windows.Forms.Label();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.gbAltaVenta = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
+            this.gbAltaVenta.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbCliente
             // 
             this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(323, 111);
+            this.cbCliente.Location = new System.Drawing.Point(122, 54);
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(121, 21);
             this.cbCliente.TabIndex = 0;
@@ -49,14 +51,14 @@
             // cbRueda
             // 
             this.cbRueda.FormattingEnabled = true;
-            this.cbRueda.Location = new System.Drawing.Point(323, 166);
+            this.cbRueda.Location = new System.Drawing.Point(122, 101);
             this.cbRueda.Name = "cbRueda";
             this.cbRueda.Size = new System.Drawing.Size(121, 21);
             this.cbRueda.TabIndex = 1;
             // 
             // numCantidad
             // 
-            this.numCantidad.Location = new System.Drawing.Point(323, 223);
+            this.numCantidad.Location = new System.Drawing.Point(122, 147);
             this.numCantidad.Name = "numCantidad";
             this.numCantidad.Size = new System.Drawing.Size(120, 20);
             this.numCantidad.TabIndex = 2;
@@ -65,7 +67,7 @@
             // 
             this.lblCliente.AutoSize = true;
             this.lblCliente.ForeColor = System.Drawing.Color.Transparent;
-            this.lblCliente.Location = new System.Drawing.Point(209, 119);
+            this.lblCliente.Location = new System.Drawing.Point(49, 62);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(39, 13);
             this.lblCliente.TabIndex = 3;
@@ -75,7 +77,7 @@
             // 
             this.lblRueda.AutoSize = true;
             this.lblRueda.ForeColor = System.Drawing.Color.Transparent;
-            this.lblRueda.Location = new System.Drawing.Point(209, 169);
+            this.lblRueda.Location = new System.Drawing.Point(49, 109);
             this.lblRueda.Name = "lblRueda";
             this.lblRueda.Size = new System.Drawing.Size(39, 13);
             this.lblRueda.TabIndex = 4;
@@ -85,7 +87,7 @@
             // 
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.ForeColor = System.Drawing.Color.Transparent;
-            this.lblCantidad.Location = new System.Drawing.Point(209, 225);
+            this.lblCantidad.Location = new System.Drawing.Point(49, 154);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(49, 13);
             this.lblCantidad.TabIndex = 5;
@@ -93,7 +95,8 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(237, 294);
+            this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmar.Location = new System.Drawing.Point(52, 228);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(176, 23);
             this.btnConfirmar.TabIndex = 6;
@@ -101,25 +104,39 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
+            // gbAltaVenta
+            // 
+            this.gbAltaVenta.Controls.Add(this.lblCliente);
+            this.gbAltaVenta.Controls.Add(this.btnConfirmar);
+            this.gbAltaVenta.Controls.Add(this.cbCliente);
+            this.gbAltaVenta.Controls.Add(this.lblCantidad);
+            this.gbAltaVenta.Controls.Add(this.cbRueda);
+            this.gbAltaVenta.Controls.Add(this.lblRueda);
+            this.gbAltaVenta.Controls.Add(this.numCantidad);
+            this.gbAltaVenta.ForeColor = System.Drawing.Color.White;
+            this.gbAltaVenta.Location = new System.Drawing.Point(88, 66);
+            this.gbAltaVenta.Name = "gbAltaVenta";
+            this.gbAltaVenta.Size = new System.Drawing.Size(281, 297);
+            this.gbAltaVenta.TabIndex = 7;
+            this.gbAltaVenta.TabStop = false;
+            this.gbAltaVenta.Text = "Alta de Venta";
+            // 
             // AltaVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.lblCantidad);
-            this.Controls.Add(this.lblRueda);
-            this.Controls.Add(this.lblCliente);
-            this.Controls.Add(this.numCantidad);
-            this.Controls.Add(this.cbRueda);
-            this.Controls.Add(this.cbCliente);
+            this.ClientSize = new System.Drawing.Size(484, 411);
+            this.Controls.Add(this.gbAltaVenta);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AltaVentaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RegistrarVenta";
             this.Load += new System.EventHandler(this.AltaVentaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
+            this.gbAltaVenta.ResumeLayout(false);
+            this.gbAltaVenta.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -132,5 +149,6 @@
         private System.Windows.Forms.Label lblRueda;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.GroupBox gbAltaVenta;
     }
 }
