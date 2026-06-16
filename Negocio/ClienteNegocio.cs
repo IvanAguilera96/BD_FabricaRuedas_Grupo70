@@ -50,5 +50,43 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+
+        public List<ResumenVentaCliente> ListarClientes()
+        {
+            List<ResumenVentaCliente> lista = new List<ResumenVentaCliente>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                // Traemos los datos directamente de la tabla, sin pasar por la vista de ventas
+                datos.setearConsulta("SELECT IdCliente, NombreCliente, Cuit, Telefono, Mail FROM Clientes");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    ResumenVentaCliente aux = new ResumenVentaCliente();
+
+                    aux.IdCliente = (int)datos.Lector["IdCliente"];
+                    aux.NombreCliente = (string)datos.Lector["NombreCliente"];
+                    aux.Cuit = (string)datos.Lector["Cuit"];
+
+                    // Validamos nulos por si las dudas en los campos de contacto
+                    aux.Telefono = !(datos.Lector["Telefono"] is DBNull) ? (string)datos.Lector["Telefono"] : "";
+                    aux.Mail = !(datos.Lector["Mail"] is DBNull) ? (string)datos.Lector["Mail"] : "";
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

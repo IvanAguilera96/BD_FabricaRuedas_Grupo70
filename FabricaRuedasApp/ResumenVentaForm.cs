@@ -45,5 +45,28 @@ namespace Presentacion
         {
             this.Close();
         }
+
+        private void btnAgregarVenta_Click(object sender, EventArgs e)
+        { 
+            AltaVentaForm pantallaAlta = new AltaVentaForm();
+
+            pantallaAlta.ShowDialog();
+            cargarGrillaVentas();
+
+        }
+        private void cargarGrillaVentas()
+        {
+            ClienteNegocio negocio = new ClienteNegocio();
+            try
+            {
+                dgvResumenVenta.DataSource = negocio.ListarResumenVentas();
+  
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar: " + ex.Message);
+            }
+        }
     }
 }
+

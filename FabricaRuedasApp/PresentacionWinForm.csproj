@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaVentaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaVentaForm.Designer.cs">
+      <DependentUpon>AltaVentaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmpleadosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="StockRuedaForm.Designer.cs">
       <DependentUpon>StockRuedaForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AltaVentaForm.resx">
+      <DependentUpon>AltaVentaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmpleadosForm.resx">
       <DependentUpon>EmpleadosForm.cs</DependentUpon>
     </EmbeddedResource>

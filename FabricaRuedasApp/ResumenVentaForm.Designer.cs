@@ -78,6 +78,7 @@
             this.btnAgregarVenta.TabIndex = 5;
             this.btnAgregarVenta.Text = "Registrar nueva venta";
             this.btnAgregarVenta.UseVisualStyleBackColor = true;
+            this.btnAgregarVenta.Click += new System.EventHandler(this.btnAgregarVenta_Click);
             // 
             // panelGrillaVentas
             // 

@@ -98,6 +98,7 @@
             this.Controls.Add(this.btnAgregarEmpleado);
             this.Controls.Add(this.lblEmpleados);
             this.Controls.Add(this.btnVolverEmpleados);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "EmpleadosForm";

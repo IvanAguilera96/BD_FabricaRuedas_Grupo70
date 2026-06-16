@@ -17,6 +17,10 @@ namespace ConexionBD
         {
             get { return lector; }
         }
+        public SqlCommand Comando
+        {
+            get { return comando; }
+        }
 
         public AccesoDatos()
         {
