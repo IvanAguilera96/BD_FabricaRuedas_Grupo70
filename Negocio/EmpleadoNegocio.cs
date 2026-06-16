@@ -72,7 +72,7 @@ namespace Negocio
                 datos.setearParametros("@Legajo", nuevo.Legajo);
                 datos.setearParametros("@Telefono", nuevo.Telefono);
                 datos.setearParametros("@Cargo", nuevo.Cargo);
-                datos.setearParametros("@Area", nuevo.Area.IdArea);
+                datos.setearParametros("@IdArea", nuevo.Area.IdArea);
 
                 if (nuevo.Supervisor != null && nuevo.Supervisor.IdEmpleado > 0)
                     datos.setearParametros("@IdSupervisor", nuevo.Supervisor.IdEmpleado);

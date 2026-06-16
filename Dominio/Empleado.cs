@@ -39,5 +39,9 @@ namespace Dominio
                 return "Sin Jefe";
             }
         }
+        public string NombreCompleto
+        {
+            get { return Nombre + " " + Apellido; }
+        }
     } 
 }

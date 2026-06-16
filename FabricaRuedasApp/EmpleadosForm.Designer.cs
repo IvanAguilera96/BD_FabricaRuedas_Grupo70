@@ -78,6 +78,7 @@
             this.btnAgregarEmpleado.TabIndex = 4;
             this.btnAgregarEmpleado.Text = "Registrar nuevo empleado";
             this.btnAgregarEmpleado.UseVisualStyleBackColor = true;
+            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
             // 
             // panelGrillaEmpleados
             // 

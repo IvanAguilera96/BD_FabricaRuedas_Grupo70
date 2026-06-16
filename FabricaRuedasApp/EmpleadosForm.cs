@@ -54,5 +54,13 @@ namespace Presentacion
         {
             this.Close();
         }
+
+        private void btnAgregarEmpleado_Click(object sender, EventArgs e)
+        {
+            AltaEmpleadoForm altaEmpleado = new AltaEmpleadoForm();
+            altaEmpleado.ShowDialog();
+
+            cargarGrilla();
+        }
     }
 }
