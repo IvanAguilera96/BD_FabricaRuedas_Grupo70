@@ -52,6 +52,12 @@
     <Compile Include="AltaEmpleadoForm.Designer.cs">
       <DependentUpon>AltaEmpleadoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AltaSuministroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaSuministroForm.Designer.cs">
+      <DependentUpon>AltaSuministroForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AltaVentaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,8 +90,17 @@
     <Compile Include="StockRuedaForm.Designer.cs">
       <DependentUpon>StockRuedaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuministrosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuministrosForm.Designer.cs">
+      <DependentUpon>SuministrosForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AltaEmpleadoForm.resx">
       <DependentUpon>AltaEmpleadoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaSuministroForm.resx">
+      <DependentUpon>AltaSuministroForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AltaVentaForm.resx">
       <DependentUpon>AltaVentaForm.cs</DependentUpon>
@@ -110,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StockRuedaForm.resx">
       <DependentUpon>StockRuedaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuministrosForm.resx">
+      <DependentUpon>SuministrosForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

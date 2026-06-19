@@ -104,7 +104,7 @@
             this.MaximizeBox = false;
             this.Name = "EmpleadosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "EmpleadosForm";
+            this.Text = "Panel de empleados";
             this.Load += new System.EventHandler(this.EmpleadosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.panelGrillaEmpleados.ResumeLayout(false);

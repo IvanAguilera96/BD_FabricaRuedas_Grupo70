@@ -33,6 +33,7 @@
             this.btnStockCritico = new System.Windows.Forms.Button();
             this.btnResumenVenta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSuministro = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEmpleado
@@ -42,9 +43,9 @@
             this.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpleado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleado.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEmpleado.Location = new System.Drawing.Point(34, 176);
+            this.btnEmpleado.Location = new System.Drawing.Point(197, 141);
             this.btnEmpleado.Name = "btnEmpleado";
-            this.btnEmpleado.Size = new System.Drawing.Size(200, 160);
+            this.btnEmpleado.Size = new System.Drawing.Size(180, 140);
             this.btnEmpleado.TabIndex = 1;
             this.btnEmpleado.Text = "Menú de Empleados";
             this.btnEmpleado.UseVisualStyleBackColor = false;
@@ -57,9 +58,9 @@
             this.btnStockCritico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStockCritico.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStockCritico.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnStockCritico.Location = new System.Drawing.Point(566, 176);
+            this.btnStockCritico.Location = new System.Drawing.Point(197, 298);
             this.btnStockCritico.Name = "btnStockCritico";
-            this.btnStockCritico.Size = new System.Drawing.Size(200, 160);
+            this.btnStockCritico.Size = new System.Drawing.Size(180, 140);
             this.btnStockCritico.TabIndex = 2;
             this.btnStockCritico.Text = "Inventario";
             this.btnStockCritico.UseVisualStyleBackColor = false;
@@ -72,9 +73,9 @@
             this.btnResumenVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResumenVenta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResumenVenta.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnResumenVenta.Location = new System.Drawing.Point(300, 176);
+            this.btnResumenVenta.Location = new System.Drawing.Point(432, 141);
             this.btnResumenVenta.Name = "btnResumenVenta";
-            this.btnResumenVenta.Size = new System.Drawing.Size(200, 160);
+            this.btnResumenVenta.Size = new System.Drawing.Size(180, 140);
             this.btnResumenVenta.TabIndex = 3;
             this.btnResumenVenta.Text = "Menú de Ventas";
             this.btnResumenVenta.UseVisualStyleBackColor = false;
@@ -92,12 +93,28 @@
             this.label1.Text = "SISTEMA DE GESTIÓN - FÁBRICA DE RUEDAS ALPHA";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btnSuministro
+            // 
+            this.btnSuministro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
+            this.btnSuministro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSuministro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuministro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuministro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSuministro.Location = new System.Drawing.Point(432, 298);
+            this.btnSuministro.Name = "btnSuministro";
+            this.btnSuministro.Size = new System.Drawing.Size(180, 140);
+            this.btnSuministro.TabIndex = 5;
+            this.btnSuministro.Text = "Suministros";
+            this.btnSuministro.UseVisualStyleBackColor = false;
+            this.btnSuministro.Click += new System.EventHandler(this.btnSuministro_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSuministro);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnResumenVenta);
             this.Controls.Add(this.btnStockCritico);
@@ -119,6 +136,7 @@
         private System.Windows.Forms.Button btnStockCritico;
         private System.Windows.Forms.Button btnResumenVenta;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSuministro;
     }
 }
 

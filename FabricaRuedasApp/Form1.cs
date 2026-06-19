@@ -42,6 +42,12 @@ namespace Presentacion
         {
 
         }
+
+        private void btnSuministro_Click(object sender, EventArgs e)
+        {
+            SuministrosForm suministroForm = new SuministrosForm();
+            suministroForm.ShowDialog(this);
+        }
     }
 }
 
