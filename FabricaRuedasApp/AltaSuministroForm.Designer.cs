@@ -29,24 +29,26 @@
         private void InitializeComponent()
         {
             this.gbIngresoSuministro = new System.Windows.Forms.GroupBox();
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.cbCliente = new System.Windows.Forms.ComboBox();
+            this.lblProveedor = new System.Windows.Forms.Label();
+            this.btnConfirmarIngreso = new System.Windows.Forms.Button();
+            this.cbProveedor = new System.Windows.Forms.ComboBox();
             this.lblCantidad = new System.Windows.Forms.Label();
-            this.cbRueda = new System.Windows.Forms.ComboBox();
             this.lblRueda = new System.Windows.Forms.Label();
             this.numCantidad = new System.Windows.Forms.NumericUpDown();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gbIngresoSuministro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // gbIngresoSuministro
             // 
-            this.gbIngresoSuministro.Controls.Add(this.lblCliente);
-            this.gbIngresoSuministro.Controls.Add(this.btnConfirmar);
-            this.gbIngresoSuministro.Controls.Add(this.cbCliente);
+            this.gbIngresoSuministro.Controls.Add(this.btnCancelar);
+            this.gbIngresoSuministro.Controls.Add(this.txtDescripcion);
+            this.gbIngresoSuministro.Controls.Add(this.lblProveedor);
+            this.gbIngresoSuministro.Controls.Add(this.btnConfirmarIngreso);
+            this.gbIngresoSuministro.Controls.Add(this.cbProveedor);
             this.gbIngresoSuministro.Controls.Add(this.lblCantidad);
-            this.gbIngresoSuministro.Controls.Add(this.cbRueda);
             this.gbIngresoSuministro.Controls.Add(this.lblRueda);
             this.gbIngresoSuministro.Controls.Add(this.numCantidad);
             this.gbIngresoSuministro.ForeColor = System.Drawing.Color.White;
@@ -57,68 +59,78 @@
             this.gbIngresoSuministro.TabStop = false;
             this.gbIngresoSuministro.Text = "Ingreso de suministros";
             // 
-            // lblCliente
+            // lblProveedor
             // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.ForeColor = System.Drawing.Color.Transparent;
-            this.lblCliente.Location = new System.Drawing.Point(49, 62);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(39, 13);
-            this.lblCliente.TabIndex = 3;
-            this.lblCliente.Text = "Cliente";
+            this.lblProveedor.AutoSize = true;
+            this.lblProveedor.ForeColor = System.Drawing.Color.Transparent;
+            this.lblProveedor.Location = new System.Drawing.Point(49, 57);
+            this.lblProveedor.Name = "lblProveedor";
+            this.lblProveedor.Size = new System.Drawing.Size(56, 13);
+            this.lblProveedor.TabIndex = 3;
+            this.lblProveedor.Text = "Proveedor";
             // 
-            // btnConfirmar
+            // btnConfirmarIngreso
             // 
-            this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
-            this.btnConfirmar.Location = new System.Drawing.Point(52, 228);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(176, 23);
-            this.btnConfirmar.TabIndex = 6;
-            this.btnConfirmar.Text = "Confirmar Venta";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmarIngreso.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmarIngreso.Location = new System.Drawing.Point(52, 228);
+            this.btnConfirmarIngreso.Name = "btnConfirmarIngreso";
+            this.btnConfirmarIngreso.Size = new System.Drawing.Size(90, 23);
+            this.btnConfirmarIngreso.TabIndex = 6;
+            this.btnConfirmarIngreso.Text = "Cargar Ingreso";
+            this.btnConfirmarIngreso.UseVisualStyleBackColor = true;
             // 
-            // cbCliente
+            // cbProveedor
             // 
-            this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(122, 54);
-            this.cbCliente.Name = "cbCliente";
-            this.cbCliente.Size = new System.Drawing.Size(121, 21);
-            this.cbCliente.TabIndex = 0;
+            this.cbProveedor.FormattingEnabled = true;
+            this.cbProveedor.Location = new System.Drawing.Point(122, 54);
+            this.cbProveedor.Name = "cbProveedor";
+            this.cbProveedor.Size = new System.Drawing.Size(121, 21);
+            this.cbProveedor.TabIndex = 0;
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.ForeColor = System.Drawing.Color.Transparent;
-            this.lblCantidad.Location = new System.Drawing.Point(49, 154);
+            this.lblCantidad.Location = new System.Drawing.Point(50, 171);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(49, 13);
             this.lblCantidad.TabIndex = 5;
             this.lblCantidad.Text = "Cantidad";
             // 
-            // cbRueda
-            // 
-            this.cbRueda.FormattingEnabled = true;
-            this.cbRueda.Location = new System.Drawing.Point(122, 101);
-            this.cbRueda.Name = "cbRueda";
-            this.cbRueda.Size = new System.Drawing.Size(121, 21);
-            this.cbRueda.TabIndex = 1;
-            // 
             // lblRueda
             // 
             this.lblRueda.AutoSize = true;
             this.lblRueda.ForeColor = System.Drawing.Color.Transparent;
-            this.lblRueda.Location = new System.Drawing.Point(49, 109);
+            this.lblRueda.Location = new System.Drawing.Point(49, 114);
             this.lblRueda.Name = "lblRueda";
-            this.lblRueda.Size = new System.Drawing.Size(39, 13);
+            this.lblRueda.Size = new System.Drawing.Size(41, 13);
             this.lblRueda.TabIndex = 4;
-            this.lblRueda.Text = "Rueda";
+            this.lblRueda.Text = "Insumo";
             // 
             // numCantidad
             // 
-            this.numCantidad.Location = new System.Drawing.Point(122, 147);
+            this.numCantidad.Location = new System.Drawing.Point(123, 164);
             this.numCantidad.Name = "numCantidad";
             this.numCantidad.Size = new System.Drawing.Size(120, 20);
             this.numCantidad.TabIndex = 2;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(122, 111);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(120, 20);
+            this.txtDescripcion.TabIndex = 7;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Location = new System.Drawing.Point(165, 228);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 23);
+            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // AltaSuministroForm
             // 
@@ -129,7 +141,9 @@
             this.Controls.Add(this.gbIngresoSuministro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AltaSuministroForm";
-            this.Text = "Ingresar suministros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Registrar Ingreso de Suministros";
+            this.Load += new System.EventHandler(this.AltaSuministroForm_Load);
             this.gbIngresoSuministro.ResumeLayout(false);
             this.gbIngresoSuministro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
@@ -140,12 +154,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbIngresoSuministro;
-        private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.ComboBox cbCliente;
+        private System.Windows.Forms.Label lblProveedor;
+        private System.Windows.Forms.Button btnConfirmarIngreso;
+        private System.Windows.Forms.ComboBox cbProveedor;
         private System.Windows.Forms.Label lblCantidad;
-        private System.Windows.Forms.ComboBox cbRueda;
         private System.Windows.Forms.Label lblRueda;
         private System.Windows.Forms.NumericUpDown numCantidad;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
