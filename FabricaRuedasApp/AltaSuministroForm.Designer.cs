@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.gbIngresoSuministro = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblProveedor = new System.Windows.Forms.Label();
             this.btnConfirmarIngreso = new System.Windows.Forms.Button();
             this.cbProveedor = new System.Windows.Forms.ComboBox();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.lblRueda = new System.Windows.Forms.Label();
             this.numCantidad = new System.Windows.Forms.NumericUpDown();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.gbIngresoSuministro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,24 @@
             this.gbIngresoSuministro.TabStop = false;
             this.gbIngresoSuministro.Text = "Ingreso de suministros";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Location = new System.Drawing.Point(165, 228);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 23);
+            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(122, 111);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(120, 20);
+            this.txtDescripcion.TabIndex = 7;
+            // 
             // lblProveedor
             // 
             this.lblProveedor.AutoSize = true;
@@ -78,6 +96,7 @@
             this.btnConfirmarIngreso.TabIndex = 6;
             this.btnConfirmarIngreso.Text = "Cargar Ingreso";
             this.btnConfirmarIngreso.UseVisualStyleBackColor = true;
+            this.btnConfirmarIngreso.Click += new System.EventHandler(this.btnConfirmarIngreso_Click);
             // 
             // cbProveedor
             // 
@@ -86,6 +105,7 @@
             this.cbProveedor.Name = "cbProveedor";
             this.cbProveedor.Size = new System.Drawing.Size(121, 21);
             this.cbProveedor.TabIndex = 0;
+            this.cbProveedor.SelectedIndexChanged += new System.EventHandler(this.cbProveedor_SelectedIndexChanged);
             // 
             // lblCantidad
             // 
@@ -113,24 +133,6 @@
             this.numCantidad.Name = "numCantidad";
             this.numCantidad.Size = new System.Drawing.Size(120, 20);
             this.numCantidad.TabIndex = 2;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(122, 111);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(120, 20);
-            this.txtDescripcion.TabIndex = 7;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(165, 228);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 23);
-            this.btnCancelar.TabIndex = 9;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // AltaSuministroForm
             // 

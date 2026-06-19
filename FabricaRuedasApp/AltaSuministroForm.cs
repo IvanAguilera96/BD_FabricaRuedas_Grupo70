@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,12 +21,72 @@ namespace Presentacion
 
         private void AltaSuministroForm_Load(object sender, EventArgs e)
         {
+            try
+            {
+                ProveedorNegocio provNegocio = new ProveedorNegocio();
 
+                cbProveedor.DataSource = provNegocio.Listar();
+
+                cbProveedor.DisplayMember = "NombreEmpresa";
+                cbProveedor.ValueMember = "IdProveedor";
+
+                cbProveedor.SelectedIndex = -1; // Para que inicie limpio sin ninguno seleccionado
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar la lista de proveedores: " + ex.Message);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirmarIngreso_Click(object sender, EventArgs e)
+        {
+            SuministroNegocio negocio = new SuministroNegocio();
+
+            try
+            {
+                if (cbProveedor.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Por favor, seleccione un proveedor.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+                {
+                    MessageBox.Show("Por favor, ingrese una descripción para el insumo.");
+                    return;
+                }
+
+                if (numCantidad.Value <= 0)
+                {
+                    MessageBox.Show("La cantidad recibida debe ser mayor a cero.");
+                    return;
+                }
+
+                int idProveedor = (int)cbProveedor.SelectedValue;
+                string descripcion = txtDescripcion.Text.Trim();
+                int cantidadRecibida = (int)numCantidad.Value;
+
+                negocio.Agregar(idProveedor, descripcion, cantidadRecibida);
+
+                MessageBox.Show("Suministro registrado con éxito.");
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar el ingreso de suministro: " + ex.Message);
+            }
         }
     }
 }

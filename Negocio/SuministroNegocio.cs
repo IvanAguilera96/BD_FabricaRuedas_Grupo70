@@ -18,7 +18,12 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT IdSuministro, IdProveedor, Descripcion, CantdRecibida, FechaEntrega FROM Suministros");
+                string consulta = @"SELECT S.IdSuministro, S.IdProveedor, P.NombreEmpresa, 
+                                        S.Descripcion, S.CantdRecibida, S.FechaEntrega 
+                                 FROM Suministros S
+                                 INNER JOIN Proveedores P ON S.IdProveedor = P.IdProveedor";
+
+                datos.setearConsulta(consulta);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -30,6 +35,7 @@ namespace Negocio
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.CantdRecibida = (int)datos.Lector["CantdRecibida"];
                     aux.FechaEntrega = (DateTime)datos.Lector["FechaEntrega"];
+                    aux.NombreEmpresa = (string)datos.Lector["NombreEmpresa"];
 
                     lista.Add(aux);
                 }

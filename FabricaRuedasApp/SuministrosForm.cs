@@ -36,7 +36,8 @@ namespace Presentacion
                 dgvSuministros.DataSource = listaSuministro;
 
                 dgvSuministros.Columns["IdSuministro"].Visible = false;
-                dgvSuministros.Columns["IdProveedor"].HeaderText = "Proveedor";
+                dgvSuministros.Columns["IdProveedor"].Visible = false;
+                dgvSuministros.Columns["NombreEmpresa"].HeaderText = "Proveedor";
                 dgvSuministros.Columns["Descripcion"].HeaderText = "Insumo";
                 dgvSuministros.Columns["CantdRecibida"].HeaderText = "Cantidad Recibida";
                 dgvSuministros.Columns["FechaEntrega"].HeaderText = "Fecha de Entrega";

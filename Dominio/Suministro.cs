@@ -13,5 +13,7 @@ namespace Dominio
         public string Descripcion { get; set; }
         public int CantdRecibida { get; set; }
         public DateTime FechaEntrega { get; set; }
+
+        public string NombreEmpresa { get; set; }
     }
 }
