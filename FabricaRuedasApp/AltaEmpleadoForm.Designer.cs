@@ -155,6 +155,7 @@
             // 
             // cbArea
             // 
+            this.cbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbArea.FormattingEnabled = true;
             this.cbArea.Location = new System.Drawing.Point(163, 237);
             this.cbArea.Name = "cbArea";
@@ -163,6 +164,7 @@
             // 
             // cbSupervisor
             // 
+            this.cbSupervisor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSupervisor.FormattingEnabled = true;
             this.cbSupervisor.Location = new System.Drawing.Point(163, 279);
             this.cbSupervisor.Name = "cbSupervisor";

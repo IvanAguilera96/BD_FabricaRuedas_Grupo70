@@ -55,5 +55,10 @@ namespace Presentacion
                 MessageBox.Show("Error al registrar: " + ex.Message);
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -36,12 +36,14 @@
             this.lblCantidad = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.gbAltaVenta = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.gbAltaVenta.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbCliente
             // 
+            this.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCliente.FormattingEnabled = true;
             this.cbCliente.Location = new System.Drawing.Point(122, 54);
             this.cbCliente.Name = "cbCliente";
@@ -50,6 +52,7 @@
             // 
             // cbRueda
             // 
+            this.cbRueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRueda.FormattingEnabled = true;
             this.cbRueda.Location = new System.Drawing.Point(122, 101);
             this.cbRueda.Name = "cbRueda";
@@ -60,6 +63,7 @@
             // 
             this.numCantidad.Location = new System.Drawing.Point(122, 147);
             this.numCantidad.Name = "numCantidad";
+            this.numCantidad.ReadOnly = true;
             this.numCantidad.Size = new System.Drawing.Size(120, 20);
             this.numCantidad.TabIndex = 2;
             // 
@@ -96,9 +100,9 @@
             // btnConfirmar
             // 
             this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
-            this.btnConfirmar.Location = new System.Drawing.Point(52, 228);
+            this.btnConfirmar.Location = new System.Drawing.Point(39, 228);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(176, 23);
+            this.btnConfirmar.Size = new System.Drawing.Size(90, 23);
             this.btnConfirmar.TabIndex = 6;
             this.btnConfirmar.Text = "Confirmar Venta";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -106,6 +110,7 @@
             // 
             // gbAltaVenta
             // 
+            this.gbAltaVenta.Controls.Add(this.btnCancelar);
             this.gbAltaVenta.Controls.Add(this.lblCliente);
             this.gbAltaVenta.Controls.Add(this.btnConfirmar);
             this.gbAltaVenta.Controls.Add(this.cbCliente);
@@ -120,6 +125,17 @@
             this.gbAltaVenta.TabIndex = 7;
             this.gbAltaVenta.TabStop = false;
             this.gbAltaVenta.Text = "Alta de Venta";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Location = new System.Drawing.Point(153, 228);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 23);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // AltaVentaForm
             // 
@@ -150,5 +166,6 @@
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.GroupBox gbAltaVenta;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

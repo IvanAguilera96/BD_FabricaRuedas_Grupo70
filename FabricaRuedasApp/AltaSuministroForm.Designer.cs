@@ -100,6 +100,7 @@
             // 
             // cbProveedor
             // 
+            this.cbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProveedor.FormattingEnabled = true;
             this.cbProveedor.Location = new System.Drawing.Point(122, 54);
             this.cbProveedor.Name = "cbProveedor";
@@ -131,6 +132,7 @@
             // 
             this.numCantidad.Location = new System.Drawing.Point(123, 164);
             this.numCantidad.Name = "numCantidad";
+            this.numCantidad.ReadOnly = true;
             this.numCantidad.Size = new System.Drawing.Size(120, 20);
             this.numCantidad.TabIndex = 2;
             // 
