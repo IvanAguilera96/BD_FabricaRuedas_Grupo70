@@ -37,8 +37,11 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.gbAltaVenta = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAgregarItem = new System.Windows.Forms.Button();
+            this.dgvDetalleTemporal = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.gbAltaVenta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleTemporal)).BeginInit();
             this.SuspendLayout();
             // 
             // cbCliente
@@ -100,7 +103,7 @@
             // btnConfirmar
             // 
             this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
-            this.btnConfirmar.Location = new System.Drawing.Point(39, 228);
+            this.btnConfirmar.Location = new System.Drawing.Point(36, 236);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(90, 23);
             this.btnConfirmar.TabIndex = 6;
@@ -110,6 +113,7 @@
             // 
             // gbAltaVenta
             // 
+            this.gbAltaVenta.Controls.Add(this.btnAgregarItem);
             this.gbAltaVenta.Controls.Add(this.btnCancelar);
             this.gbAltaVenta.Controls.Add(this.lblCliente);
             this.gbAltaVenta.Controls.Add(this.btnConfirmar);
@@ -129,7 +133,7 @@
             // btnCancelar
             // 
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(153, 228);
+            this.btnCancelar.Location = new System.Drawing.Point(150, 236);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(90, 23);
             this.btnCancelar.TabIndex = 7;
@@ -137,12 +141,32 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnAgregarItem
+            // 
+            this.btnAgregarItem.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregarItem.Location = new System.Drawing.Point(84, 193);
+            this.btnAgregarItem.Name = "btnAgregarItem";
+            this.btnAgregarItem.Size = new System.Drawing.Size(114, 23);
+            this.btnAgregarItem.TabIndex = 8;
+            this.btnAgregarItem.Text = "Agregar Producto";
+            this.btnAgregarItem.UseVisualStyleBackColor = true;
+            this.btnAgregarItem.Click += new System.EventHandler(this.btnAgregarItem_Click);
+            // 
+            // dgvDetalleTemporal
+            // 
+            this.dgvDetalleTemporal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalleTemporal.Location = new System.Drawing.Point(391, 132);
+            this.dgvDetalleTemporal.Name = "dgvDetalleTemporal";
+            this.dgvDetalleTemporal.Size = new System.Drawing.Size(528, 150);
+            this.dgvDetalleTemporal.TabIndex = 9;
+            // 
             // AltaVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(484, 411);
+            this.ClientSize = new System.Drawing.Size(984, 461);
+            this.Controls.Add(this.dgvDetalleTemporal);
             this.Controls.Add(this.gbAltaVenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AltaVentaForm";
@@ -152,6 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
             this.gbAltaVenta.ResumeLayout(false);
             this.gbAltaVenta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleTemporal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,5 +192,7 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.GroupBox gbAltaVenta;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAgregarItem;
+        private System.Windows.Forms.DataGridView dgvDetalleTemporal;
     }
 }

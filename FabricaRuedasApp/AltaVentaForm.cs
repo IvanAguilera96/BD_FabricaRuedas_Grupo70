@@ -1,4 +1,5 @@
-﻿using Negocio;
+﻿using Dominio;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,9 @@ namespace Presentacion
 {
     public partial class AltaVentaForm : Form
     {
+        // CREAMOS LA LISTA EN MEMORIA PARA ACUMULAR LOS RENGLONES DE LA VENTA
+        private List<DetalleVenta> carrito = new List<DetalleVenta>();
+
         public AltaVentaForm()
         {
             InitializeComponent();
@@ -28,27 +32,72 @@ namespace Presentacion
 
             // Cargamos el combo de ruedas
             StockRuedaNegocio ruedaNegocio = new StockRuedaNegocio();
-            cbRueda.DataSource = ruedaNegocio.Listar(); 
-            cbRueda.DisplayMember = "Modelo"; 
-            cbRueda.ValueMember = "IdRueda"; 
+            cbRueda.DataSource = ruedaNegocio.Listar();
+            cbRueda.DisplayMember = "Modelo";
+            cbRueda.ValueMember = "IdRueda";
+
+            dgvDetalleTemporal.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDetalleTemporal.MultiSelect = false;
+        }
+
+        private void btnAgregarItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (numCantidad.Value <= 0)
+                {
+                    MessageBox.Show("Por favor, ingrese una cantidad mayor a 0.");
+                    return;
+                }
+
+                DetalleVenta renglon = new DetalleVenta();
+
+                renglon.IdRueda = (int)cbRueda.SelectedValue;
+                renglon.Cantidad = (int)numCantidad.Value;
+
+                Rueda ruedaSeleccionada = (Rueda)cbRueda.SelectedItem;
+
+                renglon.ModeloRueda = ruedaSeleccionada.Modelo;
+                renglon.PrecioUnitario = ruedaSeleccionada.PrecioUnitario;
+
+                carrito.Add(renglon);
+
+                dgvDetalleTemporal.DataSource = null;
+                dgvDetalleTemporal.DataSource = carrito;
+
+                dgvDetalleTemporal.Columns["IdDetalle"].Visible = false;
+                dgvDetalleTemporal.Columns["IdVenta"].Visible = false;
+                dgvDetalleTemporal.Columns["IdRueda"].Visible = false;
+
+                cbCliente.Enabled = false;
+                numCantidad.Value = 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar: " + ex.Message);
+            }
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             VentaNegocio negocio = new VentaNegocio();
+            Venta nuevaVenta = new Venta();
 
             try
             {
-                int idCliente = (int)cbCliente.SelectedValue;
-                int idRueda = (int)cbRueda.SelectedValue;
+                if (carrito.Count == 0)
+                {
+                    MessageBox.Show("Debe agregar al menos una rueda para poder registrar la venta.");
+                    return;
+                }
 
-                int cantidad = (int)numCantidad.Value;
+                nuevaVenta.IdCliente = (int)cbCliente.SelectedValue;
+                nuevaVenta.Detalle = carrito; // Le pasamos la lista de renglones
 
-                // Invocamos el método de negocio que ejecuta el SP
-                negocio.RegistrarVenta(idCliente, idRueda, cantidad);
+                int idVentaFacturada = negocio.RegistrarVentaCompleta(nuevaVenta);
 
-                MessageBox.Show("¡Venta registrada con éxito!");
-                this.Close(); 
+                MessageBox.Show("¡Venta N° " + idVentaFacturada + " registrada con éxito con todos sus productos!");
+                this.Close();
             }
             catch (Exception ex)
             {
