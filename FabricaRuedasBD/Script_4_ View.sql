@@ -39,6 +39,7 @@ SELECT
     c.Cuit,
     c.Telefono,
     c.Mail,
+    v.FechaVenta,
     
     ISNULL((
         SELECT SUM(dv.Cantidad) 

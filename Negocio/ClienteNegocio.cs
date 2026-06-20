@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT IdVenta, IdCliente, NombreCliente, Cuit, Telefono, Mail, TotalUnidadesVendidas, MontoTotalVendido FROM VW_ResumenVentas");
+                datos.setearConsulta("SELECT IdVenta, IdCliente, NombreCliente, FechaVenta, Cuit, Telefono, Mail, TotalUnidadesVendidas, MontoTotalVendido FROM VW_ResumenVentas");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -27,6 +27,7 @@ namespace Negocio
                     aux.IdCliente = (int)datos.Lector["IdCliente"];
                     aux.NombreCliente = (string)datos.Lector["NombreCliente"];
                     aux.Cuit = (string)datos.Lector["Cuit"];
+                    aux.FechaVenta = (DateTime)datos.Lector["FechaVenta"];
                     aux.Telefono = (string)datos.Lector["Telefono"];
                     aux.Mail = (string)datos.Lector["Mail"];
                     aux.IdVenta = (int)datos.Lector["IdVenta"];
