@@ -98,7 +98,6 @@ namespace Negocio
         
         }
 
-        // 1. Obtener los renglones del detalle
         public List<DetalleVenta> ListarDetallePorId(int idVenta)
         {
             List<DetalleVenta> lista = new List<DetalleVenta>();
@@ -106,8 +105,6 @@ namespace Negocio
 
             try
             {
-                // Podés usar una consulta directa o un SP sencillo: 'SELECT * FROM DetalleVentas WHERE IdVenta = @IdVenta'
-                // Recordá incluir un INNER JOIN a StockRuedas si querés recuperar la propiedad 'ModeloRueda' que creamos antes.
                 datos.setearConsulta("SELECT d.IdDetalle, d.IdVenta, d.IdRueda, r.Modelo as ModeloRueda, d.Cantidad, d.PrecioUnitario FROM DetalleVentas d INNER JOIN StockRuedas r ON d.IdRueda = r.IdRueda WHERE d.IdVenta = @IdVenta");
                 datos.setearParametros("@IdVenta", idVenta);
                 datos.ejecutarLectura();

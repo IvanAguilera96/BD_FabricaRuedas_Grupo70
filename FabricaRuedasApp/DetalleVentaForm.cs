@@ -79,8 +79,9 @@ namespace Presentacion
                 // Buscamos los detalles en la base de datos usando nuestro nuevo método
                 List<DetalleVenta> listaDetalle = negocio.ListarDetallePorId(idVentaSeleccionada);
                 dgvDetalleVenta.DataSource = listaDetalle;
+                dgvDetalleVenta.Columns["IdVenta"].Visible = false;
 
-                // Ocultamos las columnas de control interno
+
                 if (dgvDetalleVenta.Columns.Contains("IdDetalle")) dgvDetalleVenta.Columns["IdDetalle"].Visible = false;
                 if (dgvDetalleVenta.Columns.Contains("IdVenta")) dgvDetalleVenta.Columns["IdVenta"].Visible = false;
                 if (dgvDetalleVenta.Columns.Contains("IdRueda")) dgvDetalleVenta.Columns["IdRueda"].Visible = false;

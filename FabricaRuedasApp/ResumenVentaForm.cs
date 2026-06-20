@@ -26,11 +26,10 @@ namespace Presentacion
             {
                 List<ResumenVentaCliente> listaReporte = negocio.ListarResumenVentas();
                 dgvResumenVenta.DataSource = listaReporte;
-
+                dgvResumenVenta.Columns["IdVenta"].Visible = false;
                 dgvResumenVenta.Columns["IdCliente"].Visible = false;
                 dgvResumenVenta.Columns["NombreCliente"].HeaderText = "Cliente";
                 dgvResumenVenta.Columns["Cuit"].HeaderText = "CUIT";
-              //  dgvResumenVenta.Columns["CantidadVentas"].HeaderText = "Facturas Emitidas";
                 dgvResumenVenta.Columns["TotalUnidadesVendidas"].HeaderText = "Total Ruedas Compradas";
                 dgvResumenVenta.Columns["MontoTotalVendido"].HeaderText = "Total Dinero ($)";
 
@@ -60,7 +59,6 @@ namespace Presentacion
             try
             {
                 dgvResumenVenta.DataSource = negocio.ListarResumenVentas();
-  
             }
             catch (Exception ex)
             {
@@ -74,16 +72,13 @@ namespace Presentacion
             {
                 if (dgvResumenVenta.CurrentRow != null)
                 {
-                    // Capturamos el objeto de la fila seleccionada (asumiendo que tu grilla se alimenta de una clase 'VentaReporte' o 'Venta')
-                    // Necesitamos el IdVenta para ir a buscar sus renglones a la base de datos.
+
                     dynamic ventaSeleccionada = dgvResumenVenta.CurrentRow.DataBoundItem;
                     int idVenta = ventaSeleccionada.IdVenta;
 
-                    // Instanciamos el nuevo formulario pasándole el ID por el constructor
                     DetalleVentaForm detalleForm = new DetalleVentaForm(idVenta);
                     detalleForm.ShowDialog();
 
-                    // Al volver, refrescamos la grilla histórica por si eliminaron algún ítem y cambió el monto total
                     cargarGrillaVentas();
                 }
                 else

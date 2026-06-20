@@ -17,22 +17,20 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT IdVenta, IdCliente, NombreCliente, Cuit, Telefono, Mail, FechaVenta, TotalUnidadesVendidas, MontoTotalVendido FROM VW_ResumenVentas");
+                datos.setearConsulta("SELECT IdVenta, IdCliente, NombreCliente, Cuit, Telefono, Mail, TotalUnidadesVendidas, MontoTotalVendido FROM VW_ResumenVentas");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     ResumenVentaCliente aux = new ResumenVentaCliente();
 
-                    // Mapeamos uno a uno los campos de la vista
                     aux.IdCliente = (int)datos.Lector["IdCliente"];
                     aux.NombreCliente = (string)datos.Lector["NombreCliente"];
                     aux.Cuit = (string)datos.Lector["Cuit"];
                     aux.Telefono = (string)datos.Lector["Telefono"];
                     aux.Mail = (string)datos.Lector["Mail"];
                     aux.IdVenta = (int)datos.Lector["IdVenta"];
-                    // SQL devuelve estos calculados, los guardamos en sus variables
-                   // aux.CantidadVentas = (int)datos.Lector["CantidadVentas"];
+
                     aux.TotalUnidadesVendidas = (int)datos.Lector["TotalUnidadesVendidas"];
                     aux.MontoTotalVendido = (decimal)datos.Lector["MontoTotalVendido"];
 

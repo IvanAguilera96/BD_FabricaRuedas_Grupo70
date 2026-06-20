@@ -23,8 +23,10 @@ BEGIN
 
         IF LEN(@ModelosAfectados) > 0
         BEGIN
-            PRINT 'El stock de los siguientes modelos ha caido por debajo de 10 unidades:';
-            PRINT SUBSTRING(@ModelosAfectados, 1, LEN(@ModelosAfectados) - 1);
+            DECLARE @MensajeFinal VARCHAR(500);
+            SET @MensajeFinal = 'STOCK CRÍTICO: Los siguientes modelos bajaron de 10 unidades: ' + @ModelosAfectados;
+
+            RAISERROR (@MensajeFinal, 16, 1);
         END
     END 
 END;

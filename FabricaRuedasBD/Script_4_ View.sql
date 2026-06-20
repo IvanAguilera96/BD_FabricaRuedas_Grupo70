@@ -33,32 +33,22 @@ GO
 
 CREATE VIEW VW_ResumenVentas AS
 SELECT
+    v.IdVenta,
     c.IdCliente,
     c.NombreCliente,
     c.Cuit,
     c.Telefono,
     c.Mail,
     
-    --Cantidad de facturas del cliente
-    COUNT(DISTINCT v.IdVenta) AS CantidadVentas,
-    
-    --Cantidad de unidades totales en el detalle de la venta
     ISNULL((
         SELECT SUM(dv.Cantidad) 
         FROM DetalleVentas dv 
-        INNER JOIN Ventas v2 ON dv.IdVenta = v2.IdVenta 
-        WHERE v2.IdCliente = c.IdCliente
+        WHERE dv.IdVenta = v.IdVenta
     ), 0) AS TotalUnidadesVendidas,
     
-    ISNULL(SUM(v.MontoTotal), 0) AS MontoTotalVendido
+    ISNULL(v.MontoTotal, 0) AS MontoTotalVendido
 
-FROM Clientes c
-INNER JOIN Ventas v ON c.IdCliente = v.IdCliente
-GROUP BY
-    c.IdCliente,
-    c.NombreCliente,
-    c.Cuit,
-    c.Telefono,
-    c.Mail;
+FROM Ventas v
+INNER JOIN Clientes c ON v.IdCliente = c.IdCliente;
 GO
 

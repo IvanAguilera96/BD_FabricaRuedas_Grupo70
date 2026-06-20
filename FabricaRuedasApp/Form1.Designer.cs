@@ -43,7 +43,7 @@
             this.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpleado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleado.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEmpleado.Location = new System.Drawing.Point(197, 141);
+            this.btnEmpleado.Location = new System.Drawing.Point(197, 108);
             this.btnEmpleado.Name = "btnEmpleado";
             this.btnEmpleado.Size = new System.Drawing.Size(180, 140);
             this.btnEmpleado.TabIndex = 1;
@@ -58,7 +58,7 @@
             this.btnStockCritico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStockCritico.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStockCritico.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnStockCritico.Location = new System.Drawing.Point(197, 298);
+            this.btnStockCritico.Location = new System.Drawing.Point(197, 265);
             this.btnStockCritico.Name = "btnStockCritico";
             this.btnStockCritico.Size = new System.Drawing.Size(180, 140);
             this.btnStockCritico.TabIndex = 2;
@@ -73,7 +73,7 @@
             this.btnResumenVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResumenVenta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResumenVenta.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnResumenVenta.Location = new System.Drawing.Point(432, 141);
+            this.btnResumenVenta.Location = new System.Drawing.Point(432, 108);
             this.btnResumenVenta.Name = "btnResumenVenta";
             this.btnResumenVenta.Size = new System.Drawing.Size(180, 140);
             this.btnResumenVenta.TabIndex = 3;
@@ -86,7 +86,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(162, 59);
+            this.label1.Location = new System.Drawing.Point(162, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(478, 25);
             this.label1.TabIndex = 4;
@@ -100,7 +100,7 @@
             this.btnSuministro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuministro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuministro.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSuministro.Location = new System.Drawing.Point(432, 298);
+            this.btnSuministro.Location = new System.Drawing.Point(432, 265);
             this.btnSuministro.Name = "btnSuministro";
             this.btnSuministro.Size = new System.Drawing.Size(180, 140);
             this.btnSuministro.TabIndex = 5;

@@ -48,9 +48,11 @@
             // 
             // dgvDetalleVenta
             // 
+            this.dgvDetalleVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetalleVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
             this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleVenta.Location = new System.Drawing.Point(12, 10);
+            this.dgvDetalleVenta.MultiSelect = false;
             this.dgvDetalleVenta.Name = "dgvDetalleVenta";
             this.dgvDetalleVenta.Size = new System.Drawing.Size(582, 175);
             this.dgvDetalleVenta.TabIndex = 0;
@@ -69,7 +71,7 @@
             // btnVolverDetalle
             // 
             this.btnVolverDetalle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolverDetalle.Location = new System.Drawing.Point(40, 37);
+            this.btnVolverDetalle.Location = new System.Drawing.Point(27, 21);
             this.btnVolverDetalle.Name = "btnVolverDetalle";
             this.btnVolverDetalle.Size = new System.Drawing.Size(75, 23);
             this.btnVolverDetalle.TabIndex = 8;
@@ -80,7 +82,7 @@
             // btnEliminarDetalle
             // 
             this.btnEliminarDetalle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarDetalle.Location = new System.Drawing.Point(131, 376);
+            this.btnEliminarDetalle.Location = new System.Drawing.Point(119, 356);
             this.btnEliminarDetalle.Name = "btnEliminarDetalle";
             this.btnEliminarDetalle.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarDetalle.TabIndex = 11;
