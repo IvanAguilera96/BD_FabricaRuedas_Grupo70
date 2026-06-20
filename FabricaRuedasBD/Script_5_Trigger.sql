@@ -30,26 +30,23 @@ BEGIN
 END;
 GO
 
-CREATE TRIGGER TR_ValidarCuitCliente
-ON Clientes
+CREATE TRIGGER TR_ValidarCuitEmpleado
+ON Empleados
 AFTER INSERT, UPDATE
 AS
 BEGIN
-    --Valida si el CUIT ingresado cumple con el patron de 13 caracteres: XX-XXXXXXXX-X
-    --[0-9] significa número, el guion es literal
     IF EXISTS (
         SELECT 1 
-        FROM Inserted 
-        WHERE Cuit NOT LIKE '[0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]-[0-9]'
+        FROM inserted 
+        WHERE LEN(Cuit) <> 11 OR ISNUMERIC(Cuit) = 0
     )
     BEGIN
-        ROLLBACK TRANSACTION;
+        RAISERROR ('El CUIT debe contener exactamente 11 dígitos numéricos sin guiones.', 16, 1);
         
-        RAISERROR ('Formato de CUIT inválido. Debe respetar la estructura: XX-XXXXXXXX-X.', 16, 1);
-        RETURN;
+        ROLLBACK TRANSACTION;
     END
 END;
-GO 
+GO
 
 CREATE TRIGGER TR_RestaurarStockPorCancelacion
 ON DetalleVentas

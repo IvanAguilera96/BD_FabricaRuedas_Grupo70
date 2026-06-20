@@ -1,6 +1,7 @@
 CREATE DATABASE TP_FabricaRuedas;
 GO
-USE TP_FabricaRuedas;
+
+USE TP_FabricaRuedas; 
 GO
 
 CREATE TABLE Areas(
@@ -12,6 +13,7 @@ CREATE TABLE Empleados(
     IdEmpleado INT PRIMARY KEY IDENTITY(1,1),
     Nombre VARCHAR(100) NOT NULL,
     Apellido VARCHAR(100) NOT NULL,
+	Cuit VARCHAR(20) UNIQUE,
     Legajo INT UNIQUE NOT NULL,
     FechaIngreso DATE NOT NULL,
 	Telefono VARCHAR(20) NOT NULL,
@@ -67,3 +69,4 @@ CREATE TABLE DetalleVentas(
 	Cantidad INT NOT NULL,
 	PrecioUnitario DECIMAL(18,2) NOT NULL
 );
+

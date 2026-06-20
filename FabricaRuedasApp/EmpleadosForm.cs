@@ -36,11 +36,9 @@ namespace Presentacion
 
                 dgvEmpleados.DataSource = listaEmpleado;
 
-                // 2. Ocultamos las columnas usando los nombres EXACTOS de tus propiedades de Dominio
                 dgvEmpleados.Columns["Area"].Visible = false;
                 dgvEmpleados.Columns["Supervisor"].Visible = false;
-
-                // 3. (Opcional) Emprolijamos los títulos de tus propiedades calculadas
+                dgvEmpleados.Columns["Cuit"].HeaderText = "Cuit";
                 dgvEmpleados.Columns["NombreArea"].HeaderText = "Área";
                 dgvEmpleados.Columns["NombreSupervisor"].HeaderText = "Supervisor";
             }

@@ -1,15 +1,6 @@
 USE TP_FabricaRuedas;
 GO
 
---DROP VIEW IF EXISTS VW_StockCritico;
---GO
-
-DROP VIEW IF EXISTS VW_AsignacionesPersonal;
---GO
-
---DROP VIEW IF EXISTS VW_ResumenVentas;
---GO        
-
 CREATE VIEW VW_StockCritico AS
 SELECT
     sc.IdRueda,
@@ -27,6 +18,7 @@ SELECT
     e.Legajo,
     e.Nombre AS NombreEmpleado,
     e.Apellido AS ApellidoEmpleado,
+    e.Cuit,
     e.Cargo,
     e.Telefono AS TelefonoEmpleado,
     e.FechaIngreso,

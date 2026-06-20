@@ -8,14 +8,14 @@ INSERT INTO Areas (NombreArea) VALUES
 ('Logística'),
 ('Administracion');
 
-
 -- 2. CARGA DE EMPLEADOS
-INSERT INTO Empleados (Nombre, Apellido, Legajo, FechaIngreso, Telefono, Cargo, IdArea, IdSupervisor) VALUES 
-('Leonardo', 'Micale', 1001, '2022-04-22', '302-2321231', 'Supervisor', 2, NULL),
-('Ivan', 'Aguilera', 1002, '2024-03-15', '302-65773432', 'Vendedor', 1, 1),
-('Sofia', 'Garnero', 2001, '2023-10-02', '302-689421', 'Supervisor', 3, NULL),
-('Lucas', 'Gutierrez', 3001, '2025-05-14', '302-416704', 'Operario', 1, 3),
-('Emilio', 'Sanches', 5501, '2022-10-01', '302-1231231', 'Operario', 1, 1);
+INSERT INTO Empleados (Nombre, Apellido, Legajo, FechaIngreso, Telefono, Cargo, IdArea, IdSupervisor, Cuit) 
+VALUES 
+('Leonardo', 'Micale', 1001, '2022-04-22', '302-2321231', 'Supervisor', 2, NULL, '20224221001'),
+('Ivan', 'Aguilera', 1002, '2024-03-15', '302-65773432', 'Vendedor', 1, 1,    '20240315102'),
+('Sofia', 'Garnero', 2001, '2023-10-02', '302-689421',   'Supervisor', 3, NULL, '27231002001'),
+('Lucas', 'Gutierrez', 3001, '2025-05-14', '302-416704',   'Operario', 1, 3,    '20250514001'),
+('Emilio', 'Sanches', 5501, '2022-10-01', '302-1231231',  'Operario', 1, 1,    '20221001501');
 
 
 -- 3. CARGA DE PROVEEDORES

@@ -55,6 +55,7 @@ namespace Presentacion
             {
                 nuevo.Nombre = txtNombre.Text;
                 nuevo.Apellido = txtApellido.Text;
+                nuevo.Cuit = txtCuit.Text;
                 nuevo.Legajo = int.Parse(txtLegajo.Text); 
                 nuevo.Telefono = txtTelefono.Text;
                 nuevo.Cargo = txtCargo.Text;

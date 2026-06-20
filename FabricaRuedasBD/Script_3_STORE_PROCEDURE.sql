@@ -92,6 +92,7 @@ GO
 CREATE PROCEDURE SP_NuevoEmpleado
 	@Nombre VARCHAR(100),
 	@Apellido VARCHAR(100),
+	@Cuit VARCHAR(20),
 	@Legajo INT,
 	@Telefono VARCHAR(20),
 	@Cargo VARCHAR(50),
@@ -116,6 +117,13 @@ BEGIN
 		END
 	END
 
+	--Valida cuit duplicado
+	IF EXISTS (SELECT 1 FROM Empleados WHERE Cuit = @Cuit)
+    BEGIN
+        PRINT 'El número de CUIT ya se encuentra registrado para otro empleado.';
+        RETURN;
+    END
+
 	--Valida legajo duplicado
 	IF EXISTS (SELECT 1 FROM Empleados WHERE Legajo = @Legajo)
 	BEGIN
@@ -124,13 +132,13 @@ BEGIN
 	END
 
 	BEGIN TRY
-		INSERT INTO Empleados (Nombre, Apellido, Legajo, FechaIngreso, Telefono, Cargo, IdArea, IdSupervisor)
-		VALUES (@Nombre, @Apellido, @Legajo, GETDATE(), @Telefono, @Cargo, @IdArea, @IdSupervisor);
+		INSERT INTO Empleados (Nombre, Apellido, Cuit, Legajo, FechaIngreso, Telefono, Cargo, IdArea, IdSupervisor)
+		VALUES (@Nombre, @Apellido, @Cuit, @Legajo, GETDATE(), @Telefono, @Cargo, @IdArea, @IdSupervisor);
 
 		PRINT 'Empleado registado con exito.';
 	END TRY
 	BEGIN CATCH
-		PRINT 'No se pudo registrar el empleado.';
+		THROW;
 	END CATCH
 END;
 GO
@@ -169,5 +177,3 @@ BEGIN
 	END CATCH
 END;
 GO
-
-

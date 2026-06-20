@@ -45,6 +45,8 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.gbAltaEmpleado = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCuit = new System.Windows.Forms.TextBox();
             this.gbAltaEmpleado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.ForeColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Location = new System.Drawing.Point(59, 39);
+            this.lblNombre.Location = new System.Drawing.Point(59, 28);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 0;
@@ -62,7 +64,7 @@
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.ForeColor = System.Drawing.Color.Transparent;
-            this.lblApellido.Location = new System.Drawing.Point(59, 74);
+            this.lblApellido.Location = new System.Drawing.Point(59, 61);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 1;
@@ -72,7 +74,7 @@
             // 
             this.lblLegajo.AutoSize = true;
             this.lblLegajo.ForeColor = System.Drawing.Color.Transparent;
-            this.lblLegajo.Location = new System.Drawing.Point(59, 116);
+            this.lblLegajo.Location = new System.Drawing.Point(59, 132);
             this.lblLegajo.Name = "lblLegajo";
             this.lblLegajo.Size = new System.Drawing.Size(39, 13);
             this.lblLegajo.TabIndex = 2;
@@ -82,7 +84,7 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.ForeColor = System.Drawing.Color.Transparent;
-            this.lblTelefono.Location = new System.Drawing.Point(59, 158);
+            this.lblTelefono.Location = new System.Drawing.Point(59, 168);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 3;
@@ -92,7 +94,7 @@
             // 
             this.lblCargo.AutoSize = true;
             this.lblCargo.ForeColor = System.Drawing.Color.Transparent;
-            this.lblCargo.Location = new System.Drawing.Point(59, 201);
+            this.lblCargo.Location = new System.Drawing.Point(59, 209);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(35, 13);
             this.lblCargo.TabIndex = 4;
@@ -102,7 +104,7 @@
             // 
             this.lblArea.AutoSize = true;
             this.lblArea.ForeColor = System.Drawing.Color.Transparent;
-            this.lblArea.Location = new System.Drawing.Point(59, 240);
+            this.lblArea.Location = new System.Drawing.Point(59, 242);
             this.lblArea.Name = "lblArea";
             this.lblArea.Size = new System.Drawing.Size(29, 13);
             this.lblArea.TabIndex = 5;
@@ -112,7 +114,7 @@
             // 
             this.lblSupervisor.AutoSize = true;
             this.lblSupervisor.ForeColor = System.Drawing.Color.Transparent;
-            this.lblSupervisor.Location = new System.Drawing.Point(59, 282);
+            this.lblSupervisor.Location = new System.Drawing.Point(59, 284);
             this.lblSupervisor.Name = "lblSupervisor";
             this.lblSupervisor.Size = new System.Drawing.Size(57, 13);
             this.lblSupervisor.TabIndex = 6;
@@ -120,35 +122,35 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(163, 36);
+            this.txtNombre.Location = new System.Drawing.Point(163, 25);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 7;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(163, 71);
+            this.txtApellido.Location = new System.Drawing.Point(163, 58);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 8;
             // 
             // txtLegajo
             // 
-            this.txtLegajo.Location = new System.Drawing.Point(163, 113);
+            this.txtLegajo.Location = new System.Drawing.Point(163, 129);
             this.txtLegajo.Name = "txtLegajo";
             this.txtLegajo.Size = new System.Drawing.Size(100, 20);
             this.txtLegajo.TabIndex = 9;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(163, 155);
+            this.txtTelefono.Location = new System.Drawing.Point(163, 165);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 10;
             // 
             // txtCargo
             // 
-            this.txtCargo.Location = new System.Drawing.Point(163, 194);
+            this.txtCargo.Location = new System.Drawing.Point(163, 202);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(100, 20);
             this.txtCargo.TabIndex = 11;
@@ -157,7 +159,7 @@
             // 
             this.cbArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbArea.FormattingEnabled = true;
-            this.cbArea.Location = new System.Drawing.Point(163, 237);
+            this.cbArea.Location = new System.Drawing.Point(163, 239);
             this.cbArea.Name = "cbArea";
             this.cbArea.Size = new System.Drawing.Size(121, 21);
             this.cbArea.TabIndex = 12;
@@ -166,7 +168,7 @@
             // 
             this.cbSupervisor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSupervisor.FormattingEnabled = true;
-            this.cbSupervisor.Location = new System.Drawing.Point(163, 279);
+            this.cbSupervisor.Location = new System.Drawing.Point(163, 281);
             this.cbSupervisor.Name = "cbSupervisor";
             this.cbSupervisor.Size = new System.Drawing.Size(121, 21);
             this.cbSupervisor.TabIndex = 13;
@@ -174,7 +176,7 @@
             // btnConfirmar
             // 
             this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
-            this.btnConfirmar.Location = new System.Drawing.Point(62, 334);
+            this.btnConfirmar.Location = new System.Drawing.Point(62, 340);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
             this.btnConfirmar.TabIndex = 14;
@@ -185,7 +187,7 @@
             // btnCancelar
             // 
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(188, 334);
+            this.btnCancelar.Location = new System.Drawing.Point(188, 340);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 15;
@@ -195,6 +197,8 @@
             // 
             // gbAltaEmpleado
             // 
+            this.gbAltaEmpleado.Controls.Add(this.label1);
+            this.gbAltaEmpleado.Controls.Add(this.txtCuit);
             this.gbAltaEmpleado.Controls.Add(this.lblTelefono);
             this.gbAltaEmpleado.Controls.Add(this.btnCancelar);
             this.gbAltaEmpleado.Controls.Add(this.lblNombre);
@@ -218,6 +222,23 @@
             this.gbAltaEmpleado.TabIndex = 16;
             this.gbAltaEmpleado.TabStop = false;
             this.gbAltaEmpleado.Text = "Alta de Empleado";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(59, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Cuit";
+            // 
+            // txtCuit
+            // 
+            this.txtCuit.Location = new System.Drawing.Point(163, 94);
+            this.txtCuit.Name = "txtCuit";
+            this.txtCuit.Size = new System.Drawing.Size(100, 20);
+            this.txtCuit.TabIndex = 17;
             // 
             // AltaEmpleadoForm
             // 
@@ -257,5 +278,7 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox gbAltaEmpleado;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCuit;
     }
 }

@@ -27,6 +27,7 @@ namespace Negocio
                     aux.Legajo = (int)datos.Lector["Legajo"];
                     aux.Nombre = (string)datos.Lector["NombreEmpleado"];
                     aux.Apellido = (string)datos.Lector["ApellidoEmpleado"];
+                    aux.Cuit = (string)datos.Lector["Cuit"];
                     aux.Cargo = (string)datos.Lector["Cargo"];
                     aux.Telefono = (string)datos.Lector["TelefonoEmpleado"];
                     aux.FechaIngreso = (DateTime)datos.Lector["FechaIngreso"];
@@ -69,6 +70,7 @@ namespace Negocio
                 datos.setearProcedimiento("SP_NuevoEmpleado");
                 datos.setearParametros("@Nombre", nuevo.Nombre);
                 datos.setearParametros("@Apellido", nuevo.Apellido);
+                datos.setearParametros("@Cuit", nuevo.Cuit);
                 datos.setearParametros("@Legajo", nuevo.Legajo);
                 datos.setearParametros("@Telefono", nuevo.Telefono);
                 datos.setearParametros("@Cargo", nuevo.Cargo);
