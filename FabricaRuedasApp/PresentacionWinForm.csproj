@@ -64,6 +64,12 @@
     <Compile Include="AltaVentaForm.Designer.cs">
       <DependentUpon>AltaVentaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetalleVentaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleVentaForm.Designer.cs">
+      <DependentUpon>DetalleVentaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmpleadosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AltaVentaForm.resx">
       <DependentUpon>AltaVentaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleVentaForm.resx">
+      <DependentUpon>DetalleVentaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmpleadosForm.resx">
       <DependentUpon>EmpleadosForm.cs</DependentUpon>

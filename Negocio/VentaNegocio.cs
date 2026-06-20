@@ -97,6 +97,65 @@ namespace Negocio
             }
         
         }
+
+        // 1. Obtener los renglones del detalle
+        public List<DetalleVenta> ListarDetallePorId(int idVenta)
+        {
+            List<DetalleVenta> lista = new List<DetalleVenta>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                // Podés usar una consulta directa o un SP sencillo: 'SELECT * FROM DetalleVentas WHERE IdVenta = @IdVenta'
+                // Recordá incluir un INNER JOIN a StockRuedas si querés recuperar la propiedad 'ModeloRueda' que creamos antes.
+                datos.setearConsulta("SELECT d.IdDetalle, d.IdVenta, d.IdRueda, r.Modelo as ModeloRueda, d.Cantidad, d.PrecioUnitario FROM DetalleVentas d INNER JOIN StockRuedas r ON d.IdRueda = r.IdRueda WHERE d.IdVenta = @IdVenta");
+                datos.setearParametros("@IdVenta", idVenta);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    DetalleVenta aux = new DetalleVenta();
+                    aux.IdDetalle = (int)datos.Lector["IdDetalle"];
+                    aux.IdVenta = (int)datos.Lector["IdVenta"];
+                    aux.IdRueda = (int)datos.Lector["IdRueda"];
+                    aux.ModeloRueda = (string)datos.Lector["ModeloRueda"];
+                    aux.Cantidad = (int)datos.Lector["Cantidad"];
+                    aux.PrecioUnitario = (decimal)datos.Lector["PrecioUnitario"];
+
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void EliminarRenglonDetalle(int idDetalle)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Delete from DetalleVentas where IdDetalle = @IdDetalle");
+
+                datos.setearParametros("@IdDetalle", idDetalle);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
 

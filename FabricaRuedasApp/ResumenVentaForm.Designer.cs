@@ -33,6 +33,7 @@
             this.lblVentas = new System.Windows.Forms.Label();
             this.btnAgregarVenta = new System.Windows.Forms.Button();
             this.panelGrillaVentas = new System.Windows.Forms.Panel();
+            this.btnVerDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumenVenta)).BeginInit();
             this.panelGrillaVentas.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +43,9 @@
             this.dgvResumenVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
             this.dgvResumenVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResumenVenta.Location = new System.Drawing.Point(12, 10);
+            this.dgvResumenVenta.MultiSelect = false;
             this.dgvResumenVenta.Name = "dgvResumenVenta";
+            this.dgvResumenVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResumenVenta.Size = new System.Drawing.Size(582, 175);
             this.dgvResumenVenta.TabIndex = 0;
             // 
@@ -88,12 +91,24 @@
             this.panelGrillaVentas.Size = new System.Drawing.Size(602, 194);
             this.panelGrillaVentas.TabIndex = 7;
             // 
+            // btnVerDetalle
+            // 
+            this.btnVerDetalle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerDetalle.Location = new System.Drawing.Point(555, 340);
+            this.btnVerDetalle.Name = "btnVerDetalle";
+            this.btnVerDetalle.Size = new System.Drawing.Size(145, 23);
+            this.btnVerDetalle.TabIndex = 8;
+            this.btnVerDetalle.Text = "Ver Detalle";
+            this.btnVerDetalle.UseVisualStyleBackColor = true;
+            this.btnVerDetalle.Click += new System.EventHandler(this.btnVerDetalle_Click);
+            // 
             // ResumenVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.panelGrillaVentas);
             this.Controls.Add(this.btnAgregarVenta);
             this.Controls.Add(this.lblVentas);
@@ -118,5 +133,6 @@
         private System.Windows.Forms.Label lblVentas;
         private System.Windows.Forms.Button btnAgregarVenta;
         private System.Windows.Forms.Panel panelGrillaVentas;
+        private System.Windows.Forms.Button btnVerDetalle;
     }
 }

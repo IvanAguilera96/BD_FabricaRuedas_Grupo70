@@ -13,8 +13,9 @@ namespace Dominio
         public string Cuit { get; set; }
         public string Telefono { get; set; }
         public string Mail { get; set; }
-        public int CantidadVentas { get; set; }
+      
         public int TotalUnidadesVendidas { get; set; }
         public decimal MontoTotalVendido { get; set; }
+        public int IdVenta { get; set; }
     }
 }

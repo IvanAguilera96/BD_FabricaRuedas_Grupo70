@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT IdCliente, NombreCliente, Cuit, Telefono, Mail, CantidadVentas, TotalUnidadesVendidas, MontoTotalVendido FROM VW_ResumenVentas");
+                datos.setearConsulta("SELECT IdVenta, IdCliente, NombreCliente, Cuit, Telefono, Mail, FechaVenta, TotalUnidadesVendidas, MontoTotalVendido FROM VW_ResumenVentas");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -30,9 +30,9 @@ namespace Negocio
                     aux.Cuit = (string)datos.Lector["Cuit"];
                     aux.Telefono = (string)datos.Lector["Telefono"];
                     aux.Mail = (string)datos.Lector["Mail"];
-
+                    aux.IdVenta = (int)datos.Lector["IdVenta"];
                     // SQL devuelve estos calculados, los guardamos en sus variables
-                    aux.CantidadVentas = (int)datos.Lector["CantidadVentas"];
+                   // aux.CantidadVentas = (int)datos.Lector["CantidadVentas"];
                     aux.TotalUnidadesVendidas = (int)datos.Lector["TotalUnidadesVendidas"];
                     aux.MontoTotalVendido = (decimal)datos.Lector["MontoTotalVendido"];
 
