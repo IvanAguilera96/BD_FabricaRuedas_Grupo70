@@ -15,6 +15,7 @@ Objetos de Base de Datos clave en el sistema
 
 Vistas 
 
+
 •	VW_StockCritico: Lista modelos con menos de 50 unidades.
 
 •	VW_AsignacionesPersonal: Muestra empleados, sus legajos y el jefe a cargo. 
@@ -24,6 +25,7 @@ Vistas
 
 Procedimientos Almacenados 
 
+
 •	SP_RegistrarVenta: Inserta la venta y descuenta automáticamente el stock disponible.
 
 •	SP_NuevoEmpleado: Registra personal validando que el jefe asignado exista y los datos sean consistentes. 
@@ -31,6 +33,7 @@ Procedimientos Almacenados
 •	SP_IngresoSuministro: Registra la llegada de materia prima vinculada a un proveedor.
 
 Triggers
+
 
 •	TR_ValidarCuitEmpleado: AFTER INSERT - No permite el registro si el formato de cuit ingresado es inválido (11 dígitos numéricos).
 
