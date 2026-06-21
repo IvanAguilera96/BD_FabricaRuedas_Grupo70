@@ -6,9 +6,12 @@ Funcionalidades principales:
 
 •	Gestión de Suministros: Registro de materiales recibidos.
 
+
 •	Control de Stock de Ruedas: Monitoreo en tiempo real de modelos, medidas y unidades disponibles. 
 
+
 •	Administración de Ventas: Registro de transacciones comerciales vinculadas a clientes específicos. 
+
 
 •	Gestión de Recursos Humanos: Vinculación de empleados operativos con sus respectivos jefes de área. 
 
