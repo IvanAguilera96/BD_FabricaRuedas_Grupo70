@@ -44,11 +44,6 @@ namespace Presentacion
         {
             try
             {
-                if (numCantidad.Value <= 0)
-                {
-                    MessageBox.Show("Por favor, ingrese una cantidad mayor a 0.");
-                    return;
-                }
 
                 DetalleVenta renglon = new DetalleVenta();
 

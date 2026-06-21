@@ -14,21 +14,7 @@ BEGIN
 	--Valida cantidad mayor a 0
 	IF @Cantidad <= 0
 	BEGIN
-		PRINT 'La cantidad debe ser mayor a cero.';
-		RETURN;
-	END
-
-	--Valida cliente existente
-	IF NOT EXISTS (SELECT 1 FROM Clientes WHERE IdCliente = @IdCliente)
-	BEGIN
-		PRINT 'El cliente indicado no existe.';
-		RETURN;
-	END
-
-	--Valida producto existente
-	IF NOT EXISTS (SELECT 1 FROM StockRuedas WHERE IdRueda = @IdRueda)
-	BEGIN
-		PRINT 'El producto seleccionado no existe.';
+		RAISERROR ('La cantidad debe ser mayor a cero.', 16, 1);
 		RETURN;
 	END
 
@@ -42,7 +28,7 @@ BEGIN
 
 	IF @StockActual < @Cantidad
 	BEGIN
-		PRINT 'Stock insuficiente.';
+		RAISERROR ('Stock insuficiente para concretar la venta.', 16, 1);
 		RETURN;
 	END
 
@@ -81,7 +67,7 @@ BEGIN
 	BEGIN CATCH
 		ROLLBACK TRANSACTION;
 
-		PRINT 'Se produjo un error registrando la venta: ' + ERROR_MESSAGE();
+		RAISERROR ('Se produjo un error registrando la venta: ', 16, 1);
 	END CATCH
 END;
 GO
@@ -100,34 +86,17 @@ CREATE PROCEDURE SP_NuevoEmpleado
 	@IdSupervisor INT = NULL --Por defecto null (caso que no tenga jefe)
 AS
 BEGIN
-	--Valida área existente
-	IF NOT EXISTS (SELECT 1 FROM Areas WHERE IdArea = @IdArea)
-	BEGIN
-		PRINT 'El área especificada no existe.';
-		RETURN;
-	END
-
-	--Valida supervisor existente
-	IF @IdSupervisor IS NOT NULL
-	BEGIN
-		IF NOT EXISTS (SELECT 1 FROM Empleados WHERE IdEmpleado = @IdSupervisor)
-		BEGIN
-			PRINT 'El supervisor especificado no existe.';
-			RETURN;
-		END
-	END
-
 	--Valida cuit duplicado
 	IF EXISTS (SELECT 1 FROM Empleados WHERE Cuit = @Cuit)
     BEGIN
-        PRINT 'El número de CUIT ya se encuentra registrado para otro empleado.';
+		RAISERROR ('El número de CUIT ya se encuentra registrado para otro empleado.', 16, 1);
         RETURN;
     END
 
 	--Valida legajo duplicado
 	IF EXISTS (SELECT 1 FROM Empleados WHERE Legajo = @Legajo)
 	BEGIN
-		PRINT 'El numero de legajo ya se encuentra asignado a otro empleado.';
+		RAISERROR ('El numero de legajo ya se encuentra asignado a otro empleado.', 16, 1);
 		RETURN;
 	END
 
@@ -135,7 +104,7 @@ BEGIN
 		INSERT INTO Empleados (Nombre, Apellido, Cuit, Legajo, FechaIngreso, Telefono, Cargo, IdArea, IdSupervisor)
 		VALUES (@Nombre, @Apellido, @Cuit, @Legajo, GETDATE(), @Telefono, @Cargo, @IdArea, @IdSupervisor);
 
-		PRINT 'Empleado registado con exito.';
+		RAISERROR ('Empleado registado con exito.', 16, 1);
 	END TRY
 	BEGIN CATCH
 		THROW;
@@ -152,17 +121,10 @@ CREATE PROCEDURE SP_IngresoSuministro
 	@CantdRecibida INT
 AS
 BEGIN
-	--Valida proveedor existente
-	IF NOT EXISTS (SELECT 1 FROM Proveedores Where IdProveedor = @IdProveedor)
-	BEGIN
-		PRINT 'El proveedor no está registrado en la fabrica.';
-		RETURN;
-	END
-
 	--Valida cantidad positiva
 	IF @CantdRecibida <= 0
 	BEGIN
-		PRINT 'La cantidad ingresada debe ser mayor a 0.';
+		RAISERROR ('La cantidad ingresada debe ser mayor a 0.', 16, 1);
 		RETURN;
 	END
 
@@ -170,7 +132,7 @@ BEGIN
 		INSERT INTO Suministros (IdProveedor, Descripcion, CantdRecibida, FechaEntrega)
 		VALUES (@IdProveedor, @Descripcion, @CantdRecibida, GETDATE());
 
-		PRINT 'Ingreso de suministro registrado con exito.';
+		RAISERROR ('Ingreso de suministro registrado con exito.', 16, 1);
 	END TRY
 	BEGIN CATCH
 		THROW;
