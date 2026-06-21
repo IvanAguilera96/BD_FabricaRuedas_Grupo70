@@ -1,34 +1,21 @@
 USE TP_FabricaRuedas;
 GO
 
-CREATE TRIGGER TR_AlertaStockCritico
-ON StockRuedas
-AFTER UPDATE
+CREATE TRIGGER TR_ValidarIngresoSuministro
+ON Suministros
+AFTER INSERT
 AS
 BEGIN
-    --Si el stock baja de 10 unidades
     IF EXISTS (
         SELECT 1 
-        FROM Inserted i 
-        INNER JOIN Deleted d ON i.IdRueda = d.IdRueda
-        WHERE i.CantDisponible < 10 AND d.CantDisponible >= 10
+        FROM inserted 
+        WHERE CantdRecibida > 1000
     )
     BEGIN
-        --Obtiene los nombres de los modelos afectados para el reporte
-        DECLARE @ModelosAfectados VARCHAR(250) = '';
+        RAISERROR ('La cantidad de suministros supera la capacidad máxima de recepción por lote (1000 unidades).', 16, 1);
         
-        SELECT @ModelosAfectados = @ModelosAfectados + i.Modelo + ' (' + i.Medida + '), '
-        FROM Inserted i
-        WHERE i.CantDisponible < 10;
-
-        IF LEN(@ModelosAfectados) > 0
-        BEGIN
-            DECLARE @MensajeFinal VARCHAR(500);
-            SET @MensajeFinal = 'STOCK CRÍTICO: Los siguientes modelos bajaron de 10 unidades: ' + @ModelosAfectados;
-
-            RAISERROR (@MensajeFinal, 16, 1);
-        END
-    END 
+        ROLLBACK TRANSACTION;
+    END
 END;
 GO
 
@@ -60,13 +47,13 @@ BEGIN
     BEGIN TRY
         BEGIN TRANSACTION;
 
-        -- 1. DEVOLUCIÓN FÍSICA: Sumamos las cantidades al stock de ruedas
+        --DEVOLUCIÓN FÍSICA: Sumamos las cantidades al stock de ruedas
         UPDATE sr
         SET sr.CantDisponible = sr.CantDisponible + d.Cantidad
         FROM StockRuedas sr
         INNER JOIN deleted d ON sr.IdRueda = d.IdRueda;
 
-        -- 2. DEVOLUCIÓN ECONÓMICA: Restamos el dinero de la factura cancelada en la cabecera
+        --DEVOLUCIÓN ECONÓMICA: Restamos el dinero de la factura cancelada en la cabecera
         UPDATE v
         SET v.MontoTotal = v.MontoTotal - (d.Cantidad * d.PrecioUnitario)
         FROM Ventas v

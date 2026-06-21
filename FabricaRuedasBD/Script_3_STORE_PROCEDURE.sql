@@ -173,7 +173,7 @@ BEGIN
 		PRINT 'Ingreso de suministro registrado con exito.';
 	END TRY
 	BEGIN CATCH
-		PRINT 'Error ingresando el suministro: ' + ERROR_MESSAGE();
+		THROW;
 	END CATCH
 END;
 GO

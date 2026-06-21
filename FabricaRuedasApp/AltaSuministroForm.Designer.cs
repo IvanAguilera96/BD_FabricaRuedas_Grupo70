@@ -131,8 +131,12 @@
             // numCantidad
             // 
             this.numCantidad.Location = new System.Drawing.Point(123, 164);
+            this.numCantidad.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
             this.numCantidad.Name = "numCantidad";
-            this.numCantidad.ReadOnly = true;
             this.numCantidad.Size = new System.Drawing.Size(120, 20);
             this.numCantidad.TabIndex = 2;
             // 

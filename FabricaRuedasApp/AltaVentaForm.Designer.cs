@@ -36,8 +36,8 @@
             this.lblCantidad = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.gbAltaVenta = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregarItem = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvDetalleTemporal = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.gbAltaVenta.SuspendLayout();
@@ -66,7 +66,6 @@
             // 
             this.numCantidad.Location = new System.Drawing.Point(122, 147);
             this.numCantidad.Name = "numCantidad";
-            this.numCantidad.ReadOnly = true;
             this.numCantidad.Size = new System.Drawing.Size(120, 20);
             this.numCantidad.TabIndex = 2;
             // 
@@ -130,17 +129,6 @@
             this.gbAltaVenta.TabStop = false;
             this.gbAltaVenta.Text = "Alta de Venta";
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(150, 236);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 23);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // btnAgregarItem
             // 
             this.btnAgregarItem.ForeColor = System.Drawing.Color.Black;
@@ -151,6 +139,17 @@
             this.btnAgregarItem.Text = "Agregar Producto";
             this.btnAgregarItem.UseVisualStyleBackColor = true;
             this.btnAgregarItem.Click += new System.EventHandler(this.btnAgregarItem_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Location = new System.Drawing.Point(150, 236);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 23);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // dgvDetalleTemporal
             // 
