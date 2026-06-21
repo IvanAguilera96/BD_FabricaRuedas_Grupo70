@@ -3,9 +3,13 @@ Explicación del Sistema
 El sistema permite gestionar el inventario, suministros y comercialización para una fábrica de ruedas, desde el ingreso de materia prima hasta la venta final. Está diseñado para facilitar el control de stock, la administración y la organización jerárquica del personal de planta. 
 
 Funcionalidades principales:
+
 •	Gestión de Suministros: Registro de materiales recibidos.
+
 •	Control de Stock de Ruedas: Monitoreo en tiempo real de modelos, medidas y unidades disponibles. 
+
 •	Administración de Ventas: Registro de transacciones comerciales vinculadas a clientes específicos. 
+
 •	Gestión de Recursos Humanos: Vinculación de empleados operativos con sus respectivos jefes de área. 
 
 El sistema está construido con una base de datos relacional que almacena toda la información necesaria para gestionar estas funcionalidades. Se han implementado tres vistas, tres procedimientos almacenados y tres triggers para mejorar la administración y la integridad de los datos.
