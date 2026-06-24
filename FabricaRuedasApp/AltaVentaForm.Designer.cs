@@ -39,6 +39,7 @@
             this.btnAgregarItem = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvDetalleTemporal = new System.Windows.Forms.DataGridView();
+            this.btnEliminarDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.gbAltaVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleTemporal)).BeginInit();
@@ -159,12 +160,24 @@
             this.dgvDetalleTemporal.Size = new System.Drawing.Size(528, 150);
             this.dgvDetalleTemporal.TabIndex = 9;
             // 
+            // btnEliminarDetalle
+            // 
+            this.btnEliminarDetalle.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarDetalle.Location = new System.Drawing.Point(391, 288);
+            this.btnEliminarDetalle.Name = "btnEliminarDetalle";
+            this.btnEliminarDetalle.Size = new System.Drawing.Size(65, 23);
+            this.btnEliminarDetalle.TabIndex = 10;
+            this.btnEliminarDetalle.Text = "Eliminar";
+            this.btnEliminarDetalle.UseVisualStyleBackColor = true;
+            this.btnEliminarDetalle.Click += new System.EventHandler(this.btnEliminarDetalle_Click);
+            // 
             // AltaVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(984, 461);
+            this.Controls.Add(this.btnEliminarDetalle);
             this.Controls.Add(this.dgvDetalleTemporal);
             this.Controls.Add(this.gbAltaVenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -193,5 +206,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgregarItem;
         private System.Windows.Forms.DataGridView dgvDetalleTemporal;
+        private System.Windows.Forms.Button btnEliminarDetalle;
     }
 }

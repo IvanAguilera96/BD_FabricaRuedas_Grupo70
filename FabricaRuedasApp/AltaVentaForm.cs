@@ -57,12 +57,7 @@ namespace Presentacion
 
                 carrito.Add(renglon);
 
-                dgvDetalleTemporal.DataSource = null;
-                dgvDetalleTemporal.DataSource = carrito;
-
-                dgvDetalleTemporal.Columns["IdDetalle"].Visible = false;
-                dgvDetalleTemporal.Columns["IdVenta"].Visible = false;
-                dgvDetalleTemporal.Columns["IdRueda"].Visible = false;
+                ActualizarGrilla();
 
                 cbCliente.Enabled = false;
                 numCantidad.Value = 1;
@@ -103,6 +98,56 @@ namespace Presentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEliminarDetalle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Validar que haya al menos una fila seleccionada
+                if (dgvDetalleTemporal.CurrentRow == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un ítem de la lista para eliminar.");
+                    return;
+                }
+
+                // Obtener el objeto DetalleVenta enlazado a la fila seleccionada
+                DetalleVenta renglonSeleccionado = (DetalleVenta)dgvDetalleTemporal.CurrentRow.DataBoundItem;
+
+                DialogResult resultado = MessageBox.Show(
+                    $"¿Está seguro de que desea quitar del carrito el modelo '{renglonSeleccionado.ModeloRueda}'?",
+                    "Quitar Ítem",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Remover el ítem de la lista en memoria
+                    carrito.Remove(renglonSeleccionado);
+
+                    ActualizarGrilla();
+
+                    if (carrito.Count == 0)
+                    {
+                        cbCliente.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el ítem: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ActualizarGrilla()
+        {
+            dgvDetalleTemporal.DataSource = null;
+            dgvDetalleTemporal.DataSource = carrito;
+
+            if (dgvDetalleTemporal.Columns["IdDetalle"] != null) dgvDetalleTemporal.Columns["IdDetalle"].Visible = false;
+            if (dgvDetalleTemporal.Columns["IdVenta"] != null) dgvDetalleTemporal.Columns["IdVenta"].Visible = false;
+            if (dgvDetalleTemporal.Columns["IdRueda"] != null) dgvDetalleTemporal.Columns["IdRueda"].Visible = false;
         }
     }
 }
