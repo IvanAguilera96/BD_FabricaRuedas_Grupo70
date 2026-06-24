@@ -80,7 +80,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar el empleado: " + ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
 
