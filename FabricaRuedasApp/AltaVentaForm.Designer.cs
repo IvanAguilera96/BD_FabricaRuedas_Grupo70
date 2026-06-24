@@ -154,8 +154,11 @@
             // 
             // dgvDetalleTemporal
             // 
+            this.dgvDetalleTemporal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDetalleTemporal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(73)))));
             this.dgvDetalleTemporal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleTemporal.Location = new System.Drawing.Point(391, 132);
+            this.dgvDetalleTemporal.MultiSelect = false;
             this.dgvDetalleTemporal.Name = "dgvDetalleTemporal";
             this.dgvDetalleTemporal.Size = new System.Drawing.Size(528, 150);
             this.dgvDetalleTemporal.TabIndex = 9;
