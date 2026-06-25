@@ -38,6 +38,7 @@ namespace Presentacion
 
                 dgvEmpleados.Columns["Area"].Visible = false;
                 dgvEmpleados.Columns["Supervisor"].Visible = false;
+                dgvEmpleados.Columns["IdEmpleado"].Visible = false;
                 dgvEmpleados.Columns["Cuit"].HeaderText = "Cuit";
                 dgvEmpleados.Columns["NombreArea"].HeaderText = "Área";
                 dgvEmpleados.Columns["NombreSupervisor"].HeaderText = "Supervisor";
