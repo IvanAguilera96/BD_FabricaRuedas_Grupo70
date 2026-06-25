@@ -73,7 +73,6 @@ END;
 GO
 
 --Procedimiento para registrar un nuevo empleado. 
---Recibe IdJefe, Nombre, Apellido, Legajo.
 
 CREATE PROCEDURE SP_NuevoEmpleado
 	@Nombre VARCHAR(100),
@@ -83,32 +82,28 @@ CREATE PROCEDURE SP_NuevoEmpleado
 	@Telefono VARCHAR(20),
 	@Cargo VARCHAR(50),
 	@IdArea INT,
-	@IdSupervisor INT = NULL --Por defecto null (caso que no tenga jefe)
+	@IdSupervisor INT = NULL -- Por defecto null (en caso que no tenga jefe)
 AS
 BEGIN
-	--Valida cuit duplicado
+	-- Valida cuit duplicado
 	IF EXISTS (SELECT 1 FROM Empleados WHERE Cuit = @Cuit)
     BEGIN
 		RAISERROR ('El número de CUIT ya se encuentra registrado para otro empleado.', 16, 1);
         RETURN;
     END
 
-	--Valida legajo duplicado
+	-- Valida legajo duplicado
 	IF EXISTS (SELECT 1 FROM Empleados WHERE Legajo = @Legajo)
 	BEGIN
 		RAISERROR ('El numero de legajo ya se encuentra asignado a otro empleado.', 16, 1);
 		RETURN;
 	END
 
-	BEGIN TRY
+	BEGIN 
 		INSERT INTO Empleados (Nombre, Apellido, Cuit, Legajo, FechaIngreso, Telefono, Cargo, IdArea, IdSupervisor)
 		VALUES (@Nombre, @Apellido, @Cuit, @Legajo, GETDATE(), @Telefono, @Cargo, @IdArea, @IdSupervisor);
 
-		RAISERROR ('Empleado registado con exito.', 16, 1);
-	END TRY
-	BEGIN CATCH
-		THROW;
-	END CATCH
+	END 
 END;
 GO
 
@@ -128,14 +123,9 @@ BEGIN
 		RETURN;
 	END
 
-	BEGIN TRY
+	BEGIN 
 		INSERT INTO Suministros (IdProveedor, Descripcion, CantdRecibida, FechaEntrega)
 		VALUES (@IdProveedor, @Descripcion, @CantdRecibida, GETDATE());
-
-		RAISERROR ('Ingreso de suministro registrado con exito.', 16, 1);
-	END TRY
-	BEGIN CATCH
-		THROW;
-	END CATCH
+	END 
 END;
 GO

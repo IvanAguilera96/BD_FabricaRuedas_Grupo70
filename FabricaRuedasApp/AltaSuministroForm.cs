@@ -80,12 +80,14 @@ namespace Presentacion
 
                 MessageBox.Show("Suministro registrado con éxito.");
 
-                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al registrar el ingreso de suministro: " + ex.Message);
+                string mensajeLimpio = ex.Message.Replace("The transaction ended in the trigger. The batch has been aborted.", "").Trim();
+
+                // Mostramos solo tu texto en español
+                MessageBox.Show(mensajeLimpio, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

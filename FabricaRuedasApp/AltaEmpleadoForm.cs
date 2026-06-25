@@ -80,7 +80,10 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                string mensajeLimpio = ex.Message.Replace("The transaction ended in the trigger. The batch has been aborted.", "").Trim();
+
+                // Mostramos solo tu texto en español
+                MessageBox.Show(mensajeLimpio, "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 
