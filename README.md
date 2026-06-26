@@ -50,7 +50,11 @@ Triggers
 
 
 PASOS PARA LA INSTALACIÓN:
+
 1- Clonar el repositorio
+
 2- Ejecutar Script_1_CreateDB.sql y Script_2_InsertRegistros.sql para crear y poblar la base de datos
+
 3- Ejecutar Script_3_STORE_PROCEDURE.sql - Script_4_ View.sql - Script_5_Trigger.sql
+
 4- Ejecutar la aplicación
