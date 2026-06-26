@@ -49,7 +49,8 @@ Triggers
 •	TR_RestaurarStockPorCancelacion: AFTER DELETE - Devuelve el stock de un artículo cancelado.
 
 
-PASOS PARA LA INSTALACIÓN:
+
+## 🚀 Pasos para Ejecutar el Proyecto
 
 1- Clonar el repositorio
 
